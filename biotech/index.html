@@ -30,7 +30,7 @@
   --accent:#3B93F5; --accent-ink:#06101E; --sky:#4BC3F7; --navy:#040B16; --navy-ink:#EAF1FA; --navy-muted:#A9BBD3;
   --hatch:#1A2B44; --good:#4CC28C; --warn:#E5A04A; --crit:#EE7B6C; color-scheme:dark }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--navy)}
@@ -57,8 +57,20 @@ nav.main a:hover{opacity:1;color:var(--sky)}
 .lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px}
 .lang button{background:transparent;border:0;color:var(--navy-ink);font:600 12px var(--display);letter-spacing:.06em;padding:6px 10px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--navy-ink);color:var(--navy)}
-@media (max-width:900px){nav.main{display:none}.lang{margin-left:auto}}
-@media (max-width:420px){.top .btn{display:none}}
+.menu-btn{display:none}
+/* Phones and small tablets: logo plus a menu button; links, language and contact open in a panel. */
+@media (max-width:900px){
+  .top .wrap{flex-wrap:wrap;column-gap:12px;row-gap:0}
+  .menu-btn{order:1;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:transparent;color:var(--navy-ink);cursor:pointer}
+  .menu-btn svg{width:20px;height:20px}
+  .menu-btn .ic-close,.top.open .menu-btn .ic-open{display:none}
+  .top.open .menu-btn .ic-close{display:block}
+  nav.main,.top .lang,.top .btn{display:none}
+  .top.open nav.main{order:2;display:flex;flex-direction:column;flex-basis:100%;gap:0;margin:12px 0 0;border-top:1px solid rgba(255,255,255,.12)}
+  .top.open nav.main a{display:flex;align-items:center;min-height:48px;font-size:16px;opacity:1;border-bottom:1px solid rgba(255,255,255,.08)}
+  .top.open .lang{order:3;display:flex;margin:14px 0}
+  .top.open .btn{order:4;display:inline-flex;margin:14px 0 14px auto}
+}
 
 /* Hero */
 .hero{position:relative;background:var(--navy);color:var(--navy-ink);overflow:hidden}
@@ -237,7 +249,16 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
 .dlg-body .kv{margin-top:0;border-top:0;padding-top:0;grid-template-columns:repeat(4,1fr)}
 @media (max-width:560px){.dlg-body .kv{grid-template-columns:1fr 1fr}}
 .dlg-foot{display:flex;gap:10px;justify-content:flex-end;padding:16px 24px;border-top:1px solid var(--line);flex-wrap:wrap}
-</style>
+
+/* Touch sizes: 44 px targets, and 16 px form text so iOS does not zoom on focus. */
+@media (max-width:900px){
+  .btn,.chip,.quick button,.search input,.filters select,.filters input,.contact input,.contact select{min-height:44px}
+  .lang button{min-width:44px;min-height:44px}
+  .quick button{padding:10px 16px}
+  .filters select,.filters input,.contact input,.contact select,.contact textarea{font-size:16px}
+  .ph .type,.ph .status{font-size:12px}
+  .logo{display:flex;align-items:center;min-height:44px}
+}</style>
 </head>
 <body>
 
@@ -247,7 +268,7 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="AgileBio Tech home"><img src="/biotech/img/logo-duo.png" alt="AgileBio Tech, Redefining Life Science Investments"></a>
-    <nav class="main" aria-label="Main">
+    <nav class="main" id="mainNav" aria-label="Main">
       <a href="#opportunities">Opportunities</a>
       <a href="#model">How it works</a>
       <a href="#hongkong">Hong Kong</a>
@@ -259,6 +280,7 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
       <button type="button" data-lang="es" aria-pressed="false">ES</button>
     </div>
     <a class="btn btn-primary" href="#contact">Talk to us</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav"><svg class="ic-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 </header>
 
@@ -519,6 +541,7 @@ const ES = {
   'This website is for information only and is not an offer or solicitation to buy or sell any security. Any offer will be made only through offering documents to qualified investors. Figures are planned, modelled or assumed and may not be achieved. Distributions may consist largely of return of capital. Cryptoassets are highly volatile and may lose all value. Sample portfolio companies are illustrative. Agile Dynamics is the sponsor of AgileBio Tech and has an economic interest.':
     'Este sitio web tiene fines exclusivamente informativos y no constituye una oferta ni una solicitud de compra o venta de ningún valor. Cualquier oferta se realizará únicamente mediante documentos de oferta dirigidos a inversores cualificados. Las cifras son planificadas, modelizadas o supuestas y pueden no alcanzarse. Las distribuciones pueden consistir en gran parte en devolución de capital. Los criptoactivos son muy volátiles y pueden perder todo su valor. Las empresas de la cartera de muestra son ilustrativas. Agile Dynamics es el patrocinador de AgileBio Tech y tiene un interés económico.',
   /* attributes */
+  'Menu':'Menú',
   'Search opportunities, e.g. respiratory, Phase I, fund':'Buscar oportunidades, p. ej. respiratorio, Fase I, fondo',
   'Search opportunities':'Buscar oportunidades','Popular searches':'Búsquedas frecuentes','Filter opportunities':'Filtrar oportunidades',
   'Therapeutic area':'Área terapéutica','Stage':'Etapa','Main':'Principal','Decision gates':'Controles de decisión','Back to top':'Volver arriba',
@@ -760,6 +783,13 @@ function init(){
   setLang(start);
 }
 init();
+/* Phone menu */
+const topBar = $('header.top'), menuBtn = $('#menuBtn');
+const setMenu = open => { topBar.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open)); };
+menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+topBar.addEventListener('click', e => { if (e.target.closest('nav.main a, .top .btn')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && topBar.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+
 const toTop = document.getElementById('toTop');
 const onScroll = () => toTop.classList.toggle('show', window.scrollY > 600);
 window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
