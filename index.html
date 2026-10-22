@@ -85,7 +85,7 @@
     --r:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{
     font-family:'Inter',system-ui,sans-serif;color:var(--body);
     background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;
@@ -140,6 +140,7 @@
     padding:140px 0 90px;color:#fff;overflow:hidden;
   }
   .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg picture{display:block;height:100%}
   .hero-bg img{width:100%;height:100%;object-fit:cover}
   .hero-bg::after{
     content:"";position:absolute;inset:0;
@@ -208,6 +209,9 @@
   }
   .model-figure img{margin:0 auto;max-height:none}
   .model-cap{font-size:13px;color:var(--muted);text-align:center;margin-top:16px;padding:0 10px}
+  /* Phones get a link to the full-size diagram: its labels are too small to read at screen width. */
+  .model-zoom{display:none;text-align:center;margin-top:12px}
+  .model-zoom a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:var(--blue-d);font-weight:600;text-decoration:underline;text-underline-offset:3px}
   .engines{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .engine{
     background:var(--ice-2);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;
@@ -236,7 +240,7 @@
   .chart-card img{border-radius:8px}
   .chart-canvas-wrap{position:relative;height:250px;width:100%}
   .chart-canvas-wrap canvas{max-width:100%}
-  .chart-foot{font-size:11px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  .chart-foot{font-size:12px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
   /* scenario toggle */
   .scenario-toggle{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 28px}
   .scenario-toggle .st-label{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-2);margin-right:6px}
@@ -284,7 +288,7 @@
   .foot-col a{display:block;font-size:14px;margin-bottom:9px;color:#9fb6d2;transition:color .2s}
   .foot-col a:hover{color:var(--cyan)}
   .foot-bot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:24px;font-size:12.5px;color:#6f86a4}
-  .disclaimer{margin-top:18px;font-size:11.5px;color:#566d8b;line-height:1.6;max-width:none}
+  .disclaimer{margin-top:18px;font-size:12px;color:#566d8b;line-height:1.6;max-width:none}
 
   /* ---------- BACK TO TOP ---------- */
   .totop{
@@ -315,8 +319,11 @@
     }
     .nav-links.open{opacity:1;visibility:visible;transform:none}
     .nav-links a{padding:13px 16px;font-size:15px}
-    .nav-cta{text-align:center;margin-top:4px}
-    .burger{display:flex}
+    .nav-cta{display:flex;align-items:center;justify-content:center;min-height:44px;margin-top:4px}
+    .burger{display:flex;padding:14px 11px}
+    .nav-brand{min-height:44px}
+    .st-btn{min-height:44px}
+    .foot-col a{padding:11px 0;margin-bottom:0}
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -327,9 +334,13 @@
     .chart-card.wide{grid-column:auto}
     .hero{min-height:auto;padding:130px 0 70px}
     .hero-stats{gap:14px}
-    .hero-stats .l{font-size:10.5px;letter-spacing:.04em}
+    .hero-stats .l{font-size:12px;letter-spacing:.04em}
+    .model-zoom{display:block}
     .foot-top{flex-direction:column;gap:30px}
     .model-figure{padding:16px}
+  }
+  @media(max-width:480px){
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
   }
   @media(prefers-reduced-motion:reduce){
     *{scroll-behavior:auto!important}
@@ -344,6 +355,7 @@
   .lang-switch .sep{color:rgba(255,255,255,.3)}
   @media(max-width:900px){
     .lang-switch{margin:8px 0 0;justify-content:center}
+    .lang-switch a{padding:12px 14px}
   }
 </style>
 </head>
@@ -352,7 +364,7 @@
 <!-- ========== NAV ========== -->
 <nav class="nav" id="nav">
   <a href="#top" class="nav-brand">
-    <img src="assets/logo_nav.png" width="3158" height="521" alt="AgileBio Tech">
+    <img src="assets/logo_nav-618.png" width="618" height="102" alt="AgileBio Tech">
   </a>
   <div class="nav-links" id="navlinks">
     <a href="#problem">The Problem</a>
@@ -370,7 +382,7 @@
 
 <!-- ========== HERO ========== -->
 <header class="hero" id="top">
-  <div class="hero-bg"><img src="assets/header_banner.jpg" width="1920" height="1280" fetchpriority="high" alt="AgileBio Tech — researcher in an AI-enabled biotechnology laboratory"></div>
+  <div class="hero-bg"><picture><source type="image/webp" srcset="assets/header_banner.webp"><img src="assets/header_banner.jpg" width="1920" height="1280" fetchpriority="high" alt="AgileBio Tech — researcher in an AI-enabled biotechnology laboratory"></picture></div>
   <div class="wrap hero-inner">
     <span class="eyebrow">Tokenized Dual-Asset Incubator</span>
     <h1>Funding the cures of tomorrow with the <span class="accent">treasury</span> of today</h1>
@@ -420,8 +432,12 @@
       <p class="lead" style="margin:0 auto;">Capital enters once through the STO, funds two engines that feed a shared revenue pool, and returns to token holders three ways — while monetized science recycles back into the treasury to compound the loop.</p>
     </div>
     <div class="model-figure reveal">
-      <img src="assets/model_diagram.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Diagram: capital flows from the STO into the treasury and incubator engines, aggregates as revenue, and returns to token holders through dividend, buyback-and-burn, and secondary liquidity.">
+      <picture>
+        <source type="image/webp" srcset="assets/model_diagram-1000.webp 1000w, assets/model_diagram-1536.webp 1536w" sizes="(max-width: 680px) calc(100vw - 70px), (max-width: 1180px) calc(100vw - 106px), 1074px">
+        <img src="assets/model_diagram.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Diagram: capital flows from the STO into the treasury and incubator engines, aggregates as revenue, and returns to token holders through dividend, buyback-and-burn, and secondary liquidity.">
+      </picture>
       <div class="model-cap">Capital flows from the STO into the treasury and incubator engines, aggregates as revenue, and returns to token holders through dividend, buyback-and-burn, and secondary liquidity.</div>
+      <p class="model-zoom"><a href="assets/model_diagram-1536.webp" target="_blank" rel="noopener">Open the full-size diagram</a></p>
     </div>
     <div class="engines">
       <div class="engine reveal"><div class="dot">1</div><div class="tag">The Engine</div><h3>Digital-asset treasury</h3><p>90% of the raise is held as a diversified BTC / ETH core with a stablecoin and tokenized-RWA sleeve, in segregated, insured, multi-signature custody. Its appreciation funds everything downstream — non-dilutively.</p></div>
@@ -512,7 +528,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="assets/logo_footer.png" width="3155" height="521" loading="lazy" decoding="async" alt="AgileBio Tech">
+        <img src="assets/logo_footer-618.png" width="618" height="102" loading="lazy" decoding="async" alt="AgileBio Tech">
         <p>A tokenized, dual-asset biotech incubator — pairing a professionally managed digital-asset treasury with a curated biotechnology portfolio.</p>
       </div>
       <div class="foot-cols">
@@ -587,7 +603,8 @@
 
   if(window.Chart){
     Chart.defaults.font.family="'Inter',sans-serif";
-    Chart.defaults.font.size=11.5;
+    Chart.defaults.font.size=12;
+    const narrow=window.matchMedia('(max-width: 680px)').matches;
     Chart.defaults.color='#7A8AA0';
 
     const built={}, charts={};
@@ -692,7 +709,7 @@
         plugins:{legend:{display:false},
           tooltip:{callbacks:{label:c=>{const a=c.raw,d=a[1]-a[0];return (d>=0?'+':'')+usdM(Math.round(d*10)/10)+' (to '+usdM(a[1])+')';}},
             backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
-        scales:{x:{grid:{display:false},ticks:{font:{size:9.5},maxRotation:30,minRotation:0}},
+        scales:{x:{grid:{display:false},ticks:{font:{size:11},maxRotation:45,minRotation:0}},
           y:{grid:{color:C.line},ticks:{callback:v=>usdM(v)},title:{display:true,text:'US$M (Year 5, Moderate)'}}}}
     });
 
@@ -702,7 +719,7 @@
       data:{labels:['Bitcoin','Ethereum','Stablecoins & RWAs','Operating reserve'],
         datasets:[{data:[54,27,9,10],backgroundColor:[C.navy,C.blue,C.cyan,'#C7D2DE'],borderColor:'#fff',borderWidth:2}]},
       options:{responsive:true,maintainAspectRatio:false,cutout:'58%',animation:{duration:900},
-        plugins:{legend:{position:'right',labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle',padding:12}},
+        plugins:{legend:{position:narrow?'bottom':'right',labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle',padding:12}},
           tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'%'},backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}}}
     });
 
