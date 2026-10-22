@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>AgileBio Tech LTD — Tokenized Dual-Asset Biotech Incubator</title>
+<meta name="description" content="AgileBio Tech LTD is a tokenized, dual-asset biotech incubator pairing a professionally managed digital-asset treasury with a curated biotechnology portfolio — patient, non-dilutive capital for long-horizon science.">
+<meta name="keywords" content="AgileBio Tech, tokenized biotech incubator, security token offering, STO, digital asset treasury, biotech investment, dual-asset, ABT token, life science investment, Bitcoin treasury, perpetual preferred token, Agile Dynamics">
+<meta name="author" content="AgileBio Tech LTD">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0A1A33">
+<link rel="canonical" href="https://agilebiotech.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AgileBio Tech LTD">
+<meta property="og:title" content="AgileBio Tech LTD — Funding the Cures of Tomorrow with the Treasury of Today">
+<meta property="og:description" content="A tokenized, dual-asset biotech incubator pairing a professionally managed digital-asset treasury with a curated biotechnology portfolio.">
+<meta property="og:url" content="https://agilebiotech.io/">
+<meta property="og:image" content="https://agilebiotech.io/assets/header_banner.jpg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1280">
+<meta property="og:image:alt" content="Researcher in an AI-enabled biotechnology laboratory">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AgileBio Tech LTD — Tokenized Dual-Asset Biotech Incubator">
+<meta name="twitter:description" content="Patient, non-dilutive capital for long-horizon science — a digital-asset treasury funding a curated biotechnology portfolio.">
+<meta name="twitter:image" content="https://agilebiotech.io/assets/header_banner.jpg">
+<meta name="twitter:image:alt" content="AgileBio Tech — AI-enabled biotechnology laboratory">
+
+<!-- Icons -->
+<link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AgileBio Tech LTD",
+  "url": "https://agilebiotech.io/",
+  "logo": "https://agilebiotech.io/assets/logo_nav.png",
+  "description": "A tokenized, dual-asset biotech incubator pairing a professionally managed digital-asset treasury with a curated biotechnology portfolio.",
+  "slogan": "Funding the cures of tomorrow with the treasury of today",
+  "email": "paul.lalovich@agiledynamics.co",
+  "knowsAbout": ["Tokenized securities","Biotechnology incubation","Digital-asset treasury management","Security token offerings","Life science investment"],
+  "memberOf": {"@type":"Organization","name":"Agile Dynamics"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AgileBio Tech LTD",
+  "url": "https://agilebiotech.io/",
+  "inLanguage": "en"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1A33;
+    --navy-2:#06122A;
+    --blue:#1E78D8;
+    --blue-d:#155CA8;
+    --cyan:#36C5F0;
+    --cyan-2:#7FDDFB;
+    --ice:#EAF3FC;
+    --ice-2:#F4F9FE;
+    --ink:#0E1726;
+    --body:#3A4658;
+    --muted:#7A8AA0;
+    --line:#DCE7F3;
+    --white:#ffffff;
+    --maxw:1180px;
+    --r:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{
+    font-family:'Inter',system-ui,sans-serif;color:var(--body);
+    background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:var(--ink);line-height:1.1;letter-spacing:-0.02em}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:96px 0}
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--blue);
+    display:inline-flex;align-items:center;gap:12px;margin-bottom:20px;
+  }
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--cyan)}
+  .lead{font-size:18px;max-width:62ch}
+  .accent{color:var(--cyan)}
+
+  /* ---------- FLOATING NAV ---------- */
+  .nav{
+    position:fixed;top:16px;left:50%;transform:translateX(-50%);
+    z-index:100;width:calc(100% - 32px);max-width:var(--maxw);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px 10px 20px;border-radius:999px;
+    background:rgba(10,26,51,.55);backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(127,221,251,.18);
+    box-shadow:0 8px 30px rgba(6,18,42,.28);
+    transition:background .3s,box-shadow .3s;
+  }
+  .nav.scrolled{background:rgba(8,18,42,.82)}
+  .nav-brand{display:flex;align-items:center;flex-shrink:0}
+  .nav-brand img{height:34px;width:auto;display:block}
+  .nav-links{display:flex;align-items:center;gap:4px}
+  .nav-links a{
+    color:#cfe0f2;font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px;
+    transition:color .2s,background .2s;
+  }
+  .nav-links a:hover{color:#fff;background:rgba(127,221,251,.12)}
+  .nav-cta{
+    background:var(--cyan);color:var(--navy)!important;font-weight:600!important;
+    padding:9px 18px!important;
+  }
+  .nav-cta:hover{background:var(--cyan-2)!important}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:10px}
+  .burger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    padding:140px 0 90px;color:#fff;overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(to bottom, rgba(10,26,51,0) 55%, rgba(10,26,51,.55) 80%, rgba(10,26,51,.92) 100%),
+      linear-gradient(105deg,rgba(6,18,42,.55) 0%,rgba(10,26,51,.30) 45%,rgba(10,26,51,.10) 100%);
+  }
+  .hero-inner{position:relative;z-index:1;max-width:760px}
+  .hero h1{
+    color:#fff;font-size:clamp(38px,6.4vw,72px);font-weight:700;
+    text-transform:uppercase;line-height:1.02;margin:18px 0 24px;
+  }
+  .hero p{font-size:clamp(16px,2.2vw,20px);color:#d3e3f5;max-width:56ch;margin-bottom:34px}
+  .hero .eyebrow{color:var(--cyan-2)}
+  .hero .eyebrow::before{background:var(--cyan)}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk',sans-serif;
+    font-weight:600;font-size:15px;padding:15px 28px;border-radius:999px;cursor:pointer;
+    transition:transform .2s,box-shadow .2s,background .2s;border:0;
+  }
+  .btn-primary{background:var(--cyan);color:var(--navy);box-shadow:0 10px 28px rgba(54,197,240,.32)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(54,197,240,.45)}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25)}
+  .btn-ghost:hover{background:rgba(255,255,255,.16)}
+  .hero-stats{
+    position:relative;z-index:1;display:flex;gap:clamp(20px,3vw,40px);flex-wrap:nowrap;
+    margin-top:54px;padding-top:34px;border-top:1px solid rgba(255,255,255,.16);
+  }
+  .hero-stats .s{flex:1 1 0;min-width:0}
+  .hero-stats .n{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700;color:#fff;line-height:1}
+  .hero-stats .l{font-size:12.5px;color:#9fb6d2;text-transform:uppercase;letter-spacing:.08em;margin-top:8px;line-height:1.3}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{max-width:720px;margin-bottom:54px}
+  .sec-head h2{font-size:clamp(28px,4.4vw,46px);font-weight:700;margin-bottom:18px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+
+  /* ---------- PROBLEM ---------- */
+  .problem{background:var(--ice-2)}
+  .prob-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+  .prob-points{display:flex;flex-direction:column;gap:22px;margin-top:8px}
+  .prob-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;
+    border-left:4px solid var(--blue);box-shadow:0 4px 16px rgba(10,26,51,.04);
+  }
+  .prob-card h4{font-size:17px;margin-bottom:6px}
+  .prob-card p{font-size:14.5px}
+  .prob-quote{
+    background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;
+    border-radius:var(--r);padding:42px 38px;position:relative;overflow:hidden;
+  }
+  .prob-quote::before{
+    content:"";position:absolute;top:-40%;right:-20%;width:70%;height:80%;
+    background:radial-gradient(circle,rgba(54,197,240,.22),transparent 60%);
+  }
+  .prob-quote .q{position:relative;font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3vw,30px);font-weight:600;line-height:1.25;color:#fff}
+  .prob-quote .q .accent{color:var(--cyan)}
+  .prob-quote .by{position:relative;margin-top:24px;font-size:13.5px;color:#9fb6d2;letter-spacing:.04em}
+
+  /* ---------- MODEL ---------- */
+  .model-figure{
+    background:#fff;border:1px solid var(--line);border-radius:var(--r);
+    padding:28px;box-shadow:0 10px 40px rgba(10,26,51,.07);margin-bottom:40px;
+  }
+  .model-figure img{margin:0 auto;max-height:none}
+  .model-cap{font-size:13px;color:var(--muted);text-align:center;margin-top:16px;padding:0 10px}
+  .engines{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .engine{
+    background:var(--ice-2);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .engine:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(10,26,51,.10);border-color:var(--cyan)}
+  .engine .tag{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+  .engine h3{font-size:20px;margin-bottom:12px}
+  .engine p{font-size:14.5px}
+  .engine .dot{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;margin-bottom:18px}
+
+  /* ---------- FINANCIALS ---------- */
+  .fin{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff}
+  .fin .eyebrow{color:var(--cyan-2)}
+  .fin .sec-head h2{color:#fff}
+  .fin .sec-head .lead{color:#bcd0e8}
+  .fin-note{font-size:13px;color:#8fa6c4;margin-top:14px;font-style:italic}
+  .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .chart-card{
+    background:#fff;border-radius:var(--r);padding:22px;
+    box-shadow:0 12px 36px rgba(0,0,0,.22);
+  }
+  .chart-card.wide{grid-column:1 / -1}
+  .chart-card h4{font-size:16px;color:var(--ink);margin-bottom:4px}
+  .chart-card .sub{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+  .chart-card img{border-radius:8px}
+  .chart-canvas-wrap{position:relative;height:250px;width:100%}
+  .chart-canvas-wrap canvas{max-width:100%}
+  .chart-foot{font-size:11px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line);line-height:1.5}
+  /* scenario toggle */
+  .scenario-toggle{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 28px}
+  .scenario-toggle .st-label{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-2);margin-right:6px}
+  .st-btn{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#cfe0f2;background:rgba(255,255,255,.06);border:1px solid rgba(127,221,251,.22);
+    padding:8px 16px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .st-btn:hover{background:rgba(127,221,251,.14);color:#fff}
+  .st-btn[aria-pressed="true"]{background:var(--cyan);color:var(--navy);border-color:var(--cyan)}
+  .st-btn .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+
+  /* ---------- RISK ---------- */
+  .risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+  .risk-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 24px}
+  .risk-card h4{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .risk-card h4::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--blue);flex-shrink:0}
+  .risk-card p{font-size:14px}
+  .risk-card .mit{font-size:13px;color:var(--blue-d);margin-top:10px;font-weight:500}
+
+  /* ---------- ROADMAP ---------- */
+  .road{background:var(--ice-2)}
+  .timeline{position:relative;margin-top:20px}
+  .timeline::before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--cyan),var(--blue))}
+  .tl-item{position:relative;padding:0 0 34px 56px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:11px;top:4px;width:16px;height:16px;border-radius:50%;
+    background:#fff;border:3px solid var(--blue);
+  }
+  .tl-item .when{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--blue);font-size:14px;letter-spacing:.04em;margin-bottom:6px}
+  .tl-item h4{font-size:18px;margin-bottom:6px}
+  .tl-item p{font-size:14.5px}
+
+  /* ---------- CTA ---------- */
+  .cta{background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);color:#fff;text-align:center}
+  .cta h2{color:#fff;font-size:clamp(28px,4.6vw,48px);font-weight:700;margin-bottom:18px;max-width:18ch;margin-left:auto;margin-right:auto}
+  .cta p{color:#d3e3f5;font-size:18px;max-width:54ch;margin:0 auto 34px}
+  .cta .btn-row{justify-content:center}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-2);color:#9fb6d2;padding:54px 0 34px}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand img{height:34px;width:auto;margin-bottom:16px}
+  .foot-brand p{font-size:13.5px;max-width:42ch}
+  .foot-cols{display:flex;gap:60px;flex-wrap:wrap}
+  .foot-col h5{font-family:'Space Grotesk',sans-serif;color:#fff;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .foot-col a{display:block;font-size:14px;margin-bottom:9px;color:#9fb6d2;transition:color .2s}
+  .foot-col a:hover{color:var(--cyan)}
+  .foot-bot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:24px;font-size:12.5px;color:#6f86a4}
+  .disclaimer{margin-top:18px;font-size:11.5px;color:#566d8b;line-height:1.6;max-width:none}
+
+  /* ---------- BACK TO TOP ---------- */
+  .totop{
+    position:fixed;right:22px;bottom:22px;z-index:90;width:52px;height:52px;border-radius:50%;
+    background:var(--blue);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(30,120,216,.4);opacity:0;visibility:hidden;
+    transform:translateY(14px);transition:opacity .3s,transform .3s,visibility .3s,background .2s;
+  }
+  .totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+  .totop:hover{background:var(--cyan);color:var(--navy)}
+  .totop svg{width:22px;height:22px}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    section{padding:72px 0}
+    .prob-grid{grid-template-columns:1fr;gap:36px}
+    .engines{grid-template-columns:1fr}
+    .risk-grid{grid-template-columns:1fr}
+    .nav-links{
+      position:absolute;top:calc(100% + 12px);right:0;left:0;flex-direction:column;align-items:stretch;
+      background:rgba(8,18,42,.96);backdrop-filter:blur(14px);border:1px solid rgba(127,221,251,.18);
+      border-radius:20px;padding:14px;gap:4px;
+      opacity:0;visibility:hidden;transform:translateY(-10px);transition:.28s;
+    }
+    .nav-links.open{opacity:1;visibility:visible;transform:none}
+    .nav-links a{padding:13px 16px;font-size:15px}
+    .nav-cta{text-align:center;margin-top:4px}
+    .burger{display:flex}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  }
+  @media(max-width:680px){
+    .wrap{padding:0 18px}
+    .chart-grid{grid-template-columns:1fr}
+    .chart-card.wide{grid-column:auto}
+    .hero{min-height:auto;padding:130px 0 70px}
+    .hero-stats{gap:14px}
+    .hero-stats .l{font-size:10.5px;letter-spacing:.04em}
+    .foot-top{flex-direction:column;gap:30px}
+    .model-figure{padding:16px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- LANG SWITCH ---------- */
+  .lang-switch{display:inline-flex;align-items:center;gap:6px;margin-left:18px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em}
+  .lang-switch a{color:#9fb6d2;text-decoration:none;padding:2px 4px;transition:color .2s}
+  .lang-switch a:hover{color:var(--cyan)}
+  .lang-switch a.active{color:#fff;border-bottom:2px solid var(--cyan)}
+  .lang-switch .sep{color:rgba(255,255,255,.3)}
+  @media(max-width:900px){
+    .lang-switch{margin:8px 0 0;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-brand">
+    <img src="assets/logo_nav.png" width="3158" height="521" alt="AgileBio Tech">
+  </a>
+  <div class="nav-links" id="navlinks">
+    <a href="#problem">The Problem</a>
+    <a href="#model">The Model</a>
+    <a href="#financials">Projections</a>
+    <a href="#risk">Risk</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#contact" class="nav-cta">Request Memorandum</a>
+    <span class="lang-switch"><a href="index.html" class="active">EN</a><span class="sep">|</span><a href="index.es.html">ES</a></span>
+  </div>
+  <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets/header_banner.jpg" width="1920" height="1280" fetchpriority="high" alt="AgileBio Tech — researcher in an AI-enabled biotechnology laboratory"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Tokenized Dual-Asset Incubator</span>
+    <h1>Funding the cures of tomorrow with the <span class="accent">treasury</span> of today</h1>
+    <p>AgileBio Tech pairs a professionally managed digital-asset treasury with a curated biotechnology portfolio — turning a permanent balance sheet into patient, non-dilutive capital for long-horizon science.</p>
+    <div class="btn-row">
+      <a href="#contact" class="btn btn-primary">Request the offering memorandum
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#model" class="btn btn-ghost">See how it works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="s"><div class="n">$50M</div><div class="l">STO<br>hard cap</div></div>
+      <div class="s"><div class="n">90%</div><div class="l">Held as<br>managed treasury</div></div>
+      <div class="s"><div class="n">10%</div><div class="l">Annual<br>dividend target</div></div>
+      <div class="s"><div class="n">0%</div><div class="l">Portfolio<br>equity dilution</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== PROBLEM ========== -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="prob-grid">
+      <div class="reveal">
+        <span class="eyebrow">The Problem</span>
+        <h2 style="font-size:clamp(26px,4vw,40px);margin-bottom:16px;">Biotech doesn't fail for lack of science. It fails for lack of patient capital.</h2>
+        <p class="lead">The venture model that funds life sciences was built for software. A SaaS company can be built and exited inside a ten-year fund. A cancer therapy cannot — and the mismatch strands brilliant science between grant money that has run out and commercial capital that arrives too late.</p>
+        <div class="prob-points">
+          <div class="prob-card"><h4>The constraint is the clock</h4><p>Drug development outlasts the patience of conventional fund structures. The pipeline of ideas isn't the bottleneck — the fund-life clock is.</p></div>
+          <div class="prob-card"><h4>Dilution arrives at the worst moment</h4><p>Founders give up ownership precisely when their work starts to matter, on terms set by capital that holds all the leverage.</p></div>
+        </div>
+      </div>
+      <div class="prob-quote reveal">
+        <div class="q">What if the funding engine had <span class="accent">no clock</span>?</div>
+        <div class="by">A permanent, appreciating treasury — not a depleting fund — pays for the science underneath it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MODEL ========== -->
+<section class="model" id="model">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The Integrated Model</span>
+      <h2>Three engines, one structure</h2>
+      <p class="lead" style="margin:0 auto;">Capital enters once through the STO, funds two engines that feed a shared revenue pool, and returns to token holders three ways — while monetized science recycles back into the treasury to compound the loop.</p>
+    </div>
+    <div class="model-figure reveal">
+      <img src="assets/model_diagram.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Diagram: capital flows from the STO into the treasury and incubator engines, aggregates as revenue, and returns to token holders through dividend, buyback-and-burn, and secondary liquidity.">
+      <div class="model-cap">Capital flows from the STO into the treasury and incubator engines, aggregates as revenue, and returns to token holders through dividend, buyback-and-burn, and secondary liquidity.</div>
+    </div>
+    <div class="engines">
+      <div class="engine reveal"><div class="dot">1</div><div class="tag">The Engine</div><h3>Digital-asset treasury</h3><p>90% of the raise is held as a diversified BTC / ETH core with a stablecoin and tokenized-RWA sleeve, in segregated, insured, multi-signature custody. Its appreciation funds everything downstream — non-dilutively.</p></div>
+      <div class="engine reveal"><div class="dot">2</div><div class="tag">The Work</div><h3>Biotech incubator</h3><p>A curated portfolio where capital is released only against milestones an independent committee has verified, then monetized through licensing, royalties, and exits — diversifying the enterprise away from single-asset volatility.</p></div>
+      <div class="engine reveal"><div class="dot">3</div><div class="tag">The Alignment</div><h3>The ABT token</h3><p>A perpetual-preferred security token that pays a quarterly dividend, accretes through rules-based buyback-and-burn, and trades on regulated secondary venues for genuine liquidity and price discovery.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FINANCIALS ========== -->
+<section class="fin" id="financials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Financial Projections</span>
+      <h2>The model, across four scenarios</h2>
+      <p class="lead">Calibrated to Bitcoin's actual five-year performance — an average annual return near 52%, a best year of +165% and a worst of −65% — and run from a prolonged crypto winter to a sustained bull market.</p>
+      <p class="fin-note">All figures are illustrative and scenario-dependent. They are not a forecast, an offer, or a guarantee of any outcome.</p>
+    </div>
+    <div class="scenario-toggle reveal" id="scenarioToggle" role="group" aria-label="Filter charts by scenario">
+      <span class="st-label">Scenario</span>
+      <button class="st-btn" data-scenario="all" aria-pressed="true">All</button>
+      <button class="st-btn" data-scenario="Optimistic" aria-pressed="false"><span class="dot" style="background:#36C5F0"></span>Optimistic</button>
+      <button class="st-btn" data-scenario="Moderate" aria-pressed="false"><span class="dot" style="background:#1E78D8"></span>Moderate</button>
+      <button class="st-btn" data-scenario="Conservative" aria-pressed="false"><span class="dot" style="background:#9AA9BD"></span>Conservative</button>
+      <button class="st-btn" data-scenario="Bear" aria-pressed="false"><span class="dot" style="background:#8B1A1A"></span>Bear</button>
+    </div>
+    <div class="chart-grid">
+      <div class="chart-card reveal"><h4>Digital-asset treasury growth</h4><div class="sub">5-year projection by scenario (US$M)</div><div class="chart-canvas-wrap"><canvas id="c_treasury"></canvas></div><p class="chart-foot">Source: AgileBio Tech five-year model, calibrated to Bitcoin's 2021–2025 performance (avg. annual return ~52%; best +165%, worst −65%). Treasury seeded at $45M (90% of a $50M STO).</p></div>
+      <div class="chart-card reveal"><h4>NAV per ABT token</h4><div class="sub">5-year projection, $100 face value</div><div class="chart-canvas-wrap"><canvas id="c_nav"></canvas></div><p class="chart-foot">Source: AgileBio Tech model. NAV per token derived from treasury value plus monetized IP and exits, net of fees, divided by tokens outstanding after buyback-and-burn. $100 face value at issue.</p></div>
+      <div class="chart-card reveal"><h4>Cumulative net income</h4><div class="sub">5-year projection by scenario (US$M)</div><div class="chart-canvas-wrap"><canvas id="c_netincome"></canvas></div><p class="chart-foot">Source: AgileBio Tech model. Cumulative net income = treasury gains + IP monetization + startup exits, less management fee and operating expense. The Bear path dips negative before recovering.</p></div>
+      <div class="chart-card reveal"><h4>Investor CAGR</h4><div class="sub">5-year compound annual growth rate</div><div class="chart-canvas-wrap"><canvas id="c_cagr"></canvas></div><p class="chart-foot">Source: AgileBio Tech model. Five-year CAGR to token holders by scenario, combining NAV accretion and reinvested dividends. Bear preserves capital (~3%) while continuing to pay a dividend.</p></div>
+      <div class="chart-card reveal"><h4>Sensitivity of Year-5 NAV</h4><div class="sub">±20% on each value driver (Moderate base)</div><div class="chart-canvas-wrap"><canvas id="c_sensitivity"></canvas></div><p class="chart-foot">Source: AgileBio Tech model. One-at-a-time ±20% shift on each driver from the Moderate Year-5 base of $1,549. Digital-asset returns dominate; IP revenue and exits are smaller, less volatile contributors.</p></div>
+      <div class="chart-card reveal"><h4>Risk-return profile</h4><div class="sub">Volatility vs. average annual return</div><div class="chart-canvas-wrap"><canvas id="c_riskreturn"></canvas></div><p class="chart-foot">Source: AgileBio Tech model. Annualized volatility (x) vs. average annual return (y) by scenario. The Moderate scenario sits toward the favourable low-volatility, high-return region.</p></div>
+      <div class="chart-card reveal"><h4>Year-5 revenue &amp; expense waterfall</h4><div class="sub">Moderate scenario (US$M)</div><div class="chart-canvas-wrap"><canvas id="c_waterfall"></canvas></div><p class="chart-foot">Source: AgileBio Tech model, Moderate scenario, Year 5. Builds from treasury gains through IP and exits, less management fee (~$22M) and operating expense (~$7M), to net income of ~$211M.</p></div>
+      <div class="chart-card reveal"><h4>Use of proceeds</h4><div class="sub">90% managed treasury, 10% operating reserve</div><div class="chart-canvas-wrap"><canvas id="c_proceeds"></canvas></div><p class="chart-foot">Source: AgileBio Tech capital structure. Of the $50M raised, 90% funds the managed treasury (Bitcoin 54%, Ethereum 27%, stablecoins &amp; RWAs 9%) and 10% the operating reserve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RISK ========== -->
+<section class="risk" id="risk">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">An Honest Word on Risk</span>
+      <h2>Real risks, structurally bounded</h2>
+      <p class="lead">The structure is designed to make risk legible and bounded — not to pretend it's small. Each principal risk has a structural answer, not a rhetorical one.</p>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-card reveal"><h4>Digital-asset volatility</h4><p>A treasury weighted to BTC/ETH carries real price risk; the returns that make the upside compelling can compress hard in a downturn.</p><div class="mit">Mitigation: diversification, rules-based rebalancing, and Bitcoin-backed credit instead of forced sales.</div></div>
+      <div class="risk-card reveal"><h4>Biotech development risk</h4><p>Trials fail, timelines slip, and not every IP asset monetizes. Frontier science is intrinsically uncertain.</p><div class="mit">Mitigation: milestone-gating caps capital-at-risk per company; a portfolio approach replaces the single-drug bet.</div></div>
+      <div class="risk-card reveal"><h4>Regulatory &amp; liquidity risk</h4><p>Rules in digital assets and life sciences keep evolving, and early secondary trading may be limited.</p><div class="mit">Mitigation: a compliant STO with KYC/AML, institutional custody, and listings on regulated venues.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ROADMAP ========== -->
+<section class="road" id="roadmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sequencing at a Glance</span>
+      <h2>From launch to a self-sustaining ecosystem</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="when">0–6 MONTHS</div><h4>Foundation &amp; launch</h4><p>Close the $50M STO, secure regulatory approvals, deploy the treasury, and stand up independent governance and custody before capital moves.</p></div>
+      <div class="tl-item reveal"><div class="when">7–12 MONTHS</div><h4>Incubator live</h4><p>Recruit the first cohort of 5–7 startups under a milestone-gating engine, publish daily NAV, and secure a compliant secondary-market listing for the ABT token.</p></div>
+      <div class="tl-item reveal"><div class="when">YEAR 2</div><h4>Growth &amp; first revenue</h4><p>Execute the first IP monetization deal, expand to 10–15 companies, and activate the rules-based buyback-and-burn program.</p></div>
+      <div class="tl-item reveal"><div class="when">YEARS 3–5</div><h4>Scale &amp; profitability</h4><p>Achieve the first portfolio exit, scale to 20–25 companies, reach consistent profitability, and explore a second therapeutic area or fund.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>The instrument that pays a yield today while funding the cures of tomorrow</h2>
+    <p>We're inviting a limited number of accredited and institutional investors to review the confidential offering memorandum, full financial projections, and legal structure.</p>
+    <div class="btn-row">
+      <a href="mailto:paul.lalovich@agiledynamics.co?subject=AgileBio%20Tech%20%E2%80%94%20Offering%20Memorandum%20Request" class="btn btn-primary">Request the memorandum
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="mailto:paul.lalovich@agiledynamics.co?subject=AgileBio%20Tech%20%E2%80%94%20Due%20Diligence%20Call" class="btn btn-ghost">Schedule a due-diligence call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo_footer.png" width="3155" height="521" loading="lazy" decoding="async" alt="AgileBio Tech">
+        <p>A tokenized, dual-asset biotech incubator — pairing a professionally managed digital-asset treasury with a curated biotechnology portfolio.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <a href="#problem">The Problem</a>
+          <a href="#model">The Model</a>
+          <a href="#financials">Projections</a>
+          <a href="#risk">Risk</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <a href="mailto:paul.lalovich@agiledynamics.co">paul.lalovich@agiledynamics.co</a>
+          <a href="#contact">Request memorandum</a>
+          <a href="#contact">Due-diligence call</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; 2026 AgileBio Tech LTD. All rights reserved.</span>
+      <span>In partnership with Agile Dynamics</span>
+    </div>
+    <p class="disclaimer">This website presents a strategic point of view and a proposed structure for discussion only. It is not an offer to sell or a solicitation to buy any security, token, or instrument, and does not constitute investment, legal, or tax advice. References to market sizes, return scenarios, treasury allocations, and structural features are illustrative and forward-looking; they depend on assumptions that may not materialize and do not represent a confirmed transaction, partnership, regulatory approval, or guaranteed outcome. Digital assets and biotechnology ventures both carry substantial risk, including loss of principal. Any offering would proceed only under definitive documentation and applicable regulatory requirements, to eligible investors.</p>
+  </div>
+</footer>
+
+<!-- ========== BACK TO TOP ========== -->
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="assets/vendor/chart-4.4.1.umd.js"></script>
+<script>
+  // nav scroll state + back-to-top
+  const nav=document.getElementById('nav'), totop=document.getElementById('totop');
+  function onScroll(){
+    const y=window.scrollY;
+    nav.classList.toggle('scrolled',y>40);
+    totop.classList.toggle('show',y>600);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  totop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // mobile menu
+  const burger=document.getElementById('burger'), links=document.getElementById('navlinks');
+  burger.addEventListener('click',()=>{
+    const open=links.classList.toggle('open');
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+  });
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    links.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);
+  }));
+
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ============ DYNAMIC CHARTS (Chart.js) ============
+  const C={navy:'#0A1A33',blue:'#1E78D8',cyan:'#36C5F0',cyan2:'#7FDDFB',grey:'#9AA9BD',danger:'#8B1A1A',line:'#E5EBF2'};
+  const years=['0','1','2','3','4','5'];
+  const dataSets={
+    treasury:{Optimistic:[45,90,200,420,820,1480],Moderate:[45,69,105,160,300,482],Conservative:[45,58,75,98,128,168],Bear:[45,24,14,19,28,41]},
+    netincome:{Optimistic:[0,40,160,430,820,1390],Moderate:[0,18,72,165,290,447],Conservative:[0,8,28,62,110,175],Bear:[0,-12,-18,-10,2,18]},
+    nav:{Optimistic:[100,310,720,1500,2900,4638],Moderate:[100,182,360,650,1020,1549],Conservative:[100,140,205,300,420,560],Bear:[100,70,65,80,95,112]}
+  };
+  const scenColor={Optimistic:C.cyan,Moderate:C.blue,Conservative:C.grey,Bear:C.danger};
+  const usdM=v=>'$'+v.toLocaleString()+'M';
+
+  if(window.Chart){
+    Chart.defaults.font.family="'Inter',sans-serif";
+    Chart.defaults.font.size=11.5;
+    Chart.defaults.color='#7A8AA0';
+
+    const built={}, charts={};
+    const make=(id,fn)=>{const el=document.getElementById(id); if(el&&!built[id]){built[id]=true; charts[id]=fn(el);}};
+
+    // FIGURE 2 · Treasury growth (line)
+    const figTreasury=el=>new Chart(el,{
+      type:'line',
+      data:{labels:years,datasets:Object.keys(dataSets.treasury).map(k=>({
+        label:k,data:dataSets.treasury[k],borderColor:scenColor[k],backgroundColor:scenColor[k],
+        borderWidth:2.4,tension:.35,pointRadius:3,pointHoverRadius:6,fill:false}))},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+        animation:{duration:900},
+        plugins:{legend:{position:'top',labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle',padding:14}},
+          tooltip:{callbacks:{label:c=>c.dataset.label+': '+usdM(c.parsed.y)},backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
+        scales:{x:{title:{display:true,text:'Year'},grid:{display:false}},
+          y:{grid:{color:C.line},ticks:{callback:v=>usdM(v)}}}}
+    });
+
+    // FIGURE 4 · Cumulative net income (grouped bar)
+    const figNet=el=>new Chart(el,{
+      type:'bar',
+      data:{labels:years.map(y=>'Y'+y),datasets:Object.keys(dataSets.netincome).map(k=>({
+        label:k,data:dataSets.netincome[k],backgroundColor:scenColor[k],borderRadius:3,maxBarThickness:18}))},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+        animation:{duration:900},
+        plugins:{legend:{position:'top',labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'rect',padding:14}},
+          tooltip:{callbacks:{label:c=>c.dataset.label+': '+usdM(c.parsed.y)},backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
+        scales:{x:{grid:{display:false}},y:{grid:{color:C.line},ticks:{callback:v=>usdM(v)}}}}
+    });
+
+    // FIGURE 5 · Investor CAGR (single bar)
+    const cagrScen=['Bear','Conservative','Moderate','Optimistic'], cagrVals=[3.0,32.1,74.1,115.9];
+    const figCagr=el=>new Chart(el,{
+      type:'bar',
+      data:{labels:cagrScen,datasets:[{label:'5-yr CAGR',data:cagrVals,
+        backgroundColor:cagrScen.map(k=>scenColor[k]),borderRadius:5,maxBarThickness:62}]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+        plugins:{legend:{display:false},
+          tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(1)+'% CAGR'},backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
+        scales:{x:{grid:{display:false}},y:{grid:{color:C.line},ticks:{callback:v=>v+'%'},suggestedMax:130}}}
+    });
+
+    // FIGURE 3 · NAV per token (line)
+    const usd=v=>'$'+v.toLocaleString();
+    const figNav=el=>new Chart(el,{
+      type:'line',
+      data:{labels:years,datasets:Object.keys(dataSets.nav).map(k=>({
+        label:k,data:dataSets.nav[k],borderColor:scenColor[k],backgroundColor:scenColor[k],
+        borderWidth:2.4,tension:.35,pointRadius:3,pointHoverRadius:6,fill:false}))},
+      options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+        animation:{duration:900},
+        plugins:{legend:{position:'top',labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle',padding:14}},
+          tooltip:{callbacks:{label:c=>c.dataset.label+': '+usd(c.parsed.y)},backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}},
+          annotation:false},
+        scales:{x:{title:{display:true,text:'Year'},grid:{display:false}},
+          y:{grid:{color:C.line},ticks:{callback:v=>usd(v)}}}}
+    });
+
+    // FIGURE 6 · Sensitivity tornado (horizontal floating bars, Moderate base $1,549)
+    const base=1549;
+    const sensDrivers=['Digital-asset returns','Startup exits','IP revenue'];
+    const sensLow=[800,1399,1449], sensHigh=[2520,1699,1649];
+    const figSens=el=>new Chart(el,{
+      type:'bar',
+      data:{labels:sensDrivers,datasets:[
+        {label:'−20% driver',data:sensLow.map(v=>[base,v]),backgroundColor:C.cyan2,borderRadius:2},
+        {label:'+20% driver',data:sensHigh.map(v=>[base,v]),backgroundColor:C.blue,borderRadius:2}
+      ]},
+      options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:900},
+        plugins:{legend:{position:'bottom',labels:{boxWidth:12,boxHeight:12,padding:14}},
+          tooltip:{callbacks:{label:c=>{const a=c.raw;return c.dataset.label+': '+usd(Math.min(a[0],a[1]))+'–'+usd(Math.max(a[0],a[1]));}},
+            backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
+        scales:{x:{grid:{color:C.line},ticks:{callback:v=>usd(v)},title:{display:true,text:'Year-5 NAV per token (US$) · base $1,549'},min:600},
+          y:{grid:{display:false}}}}
+    });
+
+    // FIGURE 7 · Risk-return scatter (volatility vs avg annual return)
+    const rr=[
+      {s:'Bear',x:52,y:5},{s:'Conservative',x:28,y:34},{s:'Moderate',x:22,y:79},{s:'Optimistic',x:31,y:129}
+    ];
+    const figRisk=el=>new Chart(el,{
+      type:'scatter',
+      data:{datasets:rr.map(p=>({label:p.s,data:[{x:p.x,y:p.y}],backgroundColor:scenColor[p.s],
+        pointRadius:9,pointHoverRadius:12,borderColor:'#fff',borderWidth:1.5}))},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+        plugins:{legend:{position:'top',labels:{boxWidth:10,boxHeight:10,usePointStyle:true,pointStyle:'circle',padding:12}},
+          tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.x+'% vol, '+c.parsed.y+'% return'},
+            backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
+        scales:{x:{title:{display:true,text:'Volatility — annualised (%) · lower is better'},grid:{color:C.line},min:10,max:60,ticks:{callback:v=>v+'%'}},
+          y:{title:{display:true,text:'Avg annual return (%)'},grid:{color:C.line},min:0,max:150,ticks:{callback:v=>v+'%'}}}}
+    });
+
+    // FIGURE 8 · Year-5 waterfall (Moderate)
+    const wLabels=['Treasury gains','IP monetization','Startup exits','Mgmt fee','Operating expense','Net income'];
+    const wFloat=[[0,188],[188,222],[222,240.4],[240.4,218.4],[218.4,211.2],[0,211.2]];
+    const wColors=[C.blue,C.blue,C.blue,C.danger,C.danger,C.navy];
+    const figWater=el=>new Chart(el,{
+      type:'bar',
+      data:{labels:wLabels,datasets:[{data:wFloat,backgroundColor:wColors,borderRadius:3,maxBarThickness:46}]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:900},
+        plugins:{legend:{display:false},
+          tooltip:{callbacks:{label:c=>{const a=c.raw,d=a[1]-a[0];return (d>=0?'+':'')+usdM(Math.round(d*10)/10)+' (to '+usdM(a[1])+')';}},
+            backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}},
+        scales:{x:{grid:{display:false},ticks:{font:{size:9.5},maxRotation:30,minRotation:0}},
+          y:{grid:{color:C.line},ticks:{callback:v=>usdM(v)},title:{display:true,text:'US$M (Year 5, Moderate)'}}}}
+    });
+
+    // FIGURE 9 · Use of proceeds (doughnut)
+    const figProceeds=el=>new Chart(el,{
+      type:'doughnut',
+      data:{labels:['Bitcoin','Ethereum','Stablecoins & RWAs','Operating reserve'],
+        datasets:[{data:[54,27,9,10],backgroundColor:[C.navy,C.blue,C.cyan,'#C7D2DE'],borderColor:'#fff',borderWidth:2}]},
+      options:{responsive:true,maintainAspectRatio:false,cutout:'58%',animation:{duration:900},
+        plugins:{legend:{position:'right',labels:{boxWidth:12,boxHeight:12,usePointStyle:true,pointStyle:'circle',padding:12}},
+          tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+'%'},backgroundColor:C.navy,padding:10,titleFont:{weight:'700'}}}}
+    });
+
+    const chartIO=new IntersectionObserver((es,obs)=>{
+      es.forEach(e=>{if(e.isIntersecting){
+        make('c_treasury',figTreasury); make('c_nav',figNav); make('c_netincome',figNet);
+        make('c_cagr',figCagr); make('c_sensitivity',figSens); make('c_riskreturn',figRisk);
+        make('c_waterfall',figWater); make('c_proceeds',figProceeds);
+        obs.disconnect();
+      }});
+    },{threshold:0.05});
+    const fin=document.getElementById('financials');
+    if(fin)chartIO.observe(fin);
+
+    // ---- scenario toggle ----
+    const scOrder=['Optimistic','Moderate','Conservative','Bear'];
+    function applyScenario(sel){
+      const lineByLabel=ch=>{ if(!ch)return; ch.data.datasets.forEach(ds=>{ds.hidden=(sel!=='all'&&ds.label!==sel);}); ch.update();};
+      // multi-line / multi-dataset charts keyed by dataset.label
+      lineByLabel(charts.c_treasury);
+      lineByLabel(charts.c_nav);
+      lineByLabel(charts.c_netincome);
+      lineByLabel(charts.c_riskreturn);
+      // CAGR is a single dataset with one bar per scenario → dim non-selected bars
+      const cg=charts.c_cagr;
+      if(cg){
+        const cs=['Bear','Conservative','Moderate','Optimistic'];
+        cg.data.datasets[0].backgroundColor=cs.map(k=>(sel==='all'||k===sel)?scenColor[k]:'rgba(154,169,189,0.18)');
+        cg.update();
+      }
+    }
+    const toggle=document.getElementById('scenarioToggle');
+    if(toggle){
+      toggle.addEventListener('click',e=>{
+        const btn=e.target.closest('.st-btn'); if(!btn)return;
+        toggle.querySelectorAll('.st-btn').forEach(b=>b.setAttribute('aria-pressed', b===btn?'true':'false'));
+        // ensure charts exist (in case toggle clicked before scroll)
+        if(!built.c_treasury){
+          make('c_treasury',figTreasury); make('c_nav',figNav); make('c_netincome',figNet);
+          make('c_cagr',figCagr); make('c_sensitivity',figSens); make('c_riskreturn',figRisk);
+          make('c_waterfall',figWater); make('c_proceeds',figProceeds);
+        }
+        applyScenario(btn.dataset.scenario);
+      });
+    }
+  }
+</script>
+</body>
+</html>
