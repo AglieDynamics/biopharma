@@ -1,7 +1,24 @@
 {
   "redirects": [
-    { "source": "/biotech", "destination": "/", "permanent": true },
-    { "source": "/biotech/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/assets/og-agilebiotech.jpg", "destination": "/img/og-agilebiotech.jpg", "permanent": true }
+    {
+      "source": "/biotech",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/biotech/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/biotech/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/assets/og-agilebiotech.jpg",
+      "destination": "/img/og-agilebiotech.jpg",
+      "permanent": true
+    }
   ]
 }
