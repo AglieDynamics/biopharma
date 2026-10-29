@@ -15,8 +15,6 @@
   --blue-700: #155CA8;
   --cyan-400: #36C5F0;
   --cyan-200: #7FDDFB;
-  --draft: #FFD166;
-  --draft-ink: #2B1D00;
 
   /* Text on light (all >= 4.5:1 on white and ice-50) */
   --ink: #0E1726;
@@ -151,10 +149,6 @@ section { padding: clamp(64px, 9vw, 112px) 0; scroll-margin-top: var(--header-h)
 .utility { background: var(--navy-950); color: var(--on-dark-2); font-size: 13px; line-height: 1.45; --focus: var(--cyan-200); }
 .utility-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 9px; padding-bottom: 9px; }
 .utility strong { color: var(--on-dark); font-weight: 600; }
-.draft-pill {
-  background: var(--draft); color: var(--draft-ink); font-weight: 600; font-size: 12px;
-  padding: 3px 10px; border-radius: var(--radius-pill); letter-spacing: 0.01em;
-}
 
 /* ---------- Header ---------- */
 .site-header {
