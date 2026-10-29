@@ -88,8 +88,16 @@ nav.main a:hover{opacity:1;color:var(--sky)}
 
 /* Hero */
 .hero{position:relative;background:var(--navy);color:var(--navy-ink);overflow:hidden}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 30%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,51,.96) 0%,rgba(7,26,51,.86) 42%,rgba(7,26,51,.35) 75%,rgba(7,26,51,.15) 100%)}
+/* Hero background: a poster still (the clip's first frame), then the looping clip once it is playing. */
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero video.bg{opacity:0;transition:opacity .6s ease}
+.hero video.bg.is-playing{opacity:1}
+/* Dark band reaches 50%: on ~1024 px screens the eyebrow runs to ~70% of the width over the bright coin frames. */
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,51,.96) 0%,rgba(7,26,51,.86) 50%,rgba(7,26,51,.38) 80%,rgba(7,26,51,.15) 100%)}
+/* Landscape phones and small tablets: the text runs to ~75% of the width, so keep the overlay dark further right. */
+@media (max-width:1000px){.hero::after{background:linear-gradient(90deg,rgba(7,26,51,.94) 0%,rgba(7,26,51,.86) 60%,rgba(7,26,51,.82) 100%)}}
+/* Portrait screens (declared last so they win at exactly 3:4): the text spans the full width, so darken top to bottom. */
+@media (max-aspect-ratio: 3/4){.hero::after{background:linear-gradient(180deg,rgba(7,26,51,.88) 0%,rgba(7,26,51,.8) 55%,rgba(7,26,51,.62) 100%)}}
 .hero .wrap{position:relative;z-index:1;padding-block:88px 56px;display:grid;gap:22px}
 .hero h1{font-size:clamp(34px,5.2vw,60px);font-weight:800;max-width:15ch;letter-spacing:-.01em}
 .hero h1 span{color:var(--sky)}
@@ -301,7 +309,14 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
 
 <main id="top">
 <section class="hero" aria-labelledby="hero-title">
-  <img class="bg" src="/img/hero-lab.jpg" alt="">
+  <picture>
+    <source media="(max-aspect-ratio: 3/4)" srcset="/img/hero-video-mobile.jpg">
+    <img class="bg" src="/img/hero-video.jpg" alt="" width="1024" height="576" fetchpriority="high">
+  </picture>
+  <video class="bg" id="heroVideo" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1">
+    <source media="(max-aspect-ratio: 3/4)" src="/video/hero-mobile.mp4" type="video/mp4">
+    <source src="/video/hero-desktop.mp4" type="video/mp4">
+  </video>
   <div class="wrap">
     <p class="eyebrow">Life-science investment platform · sponsored by Agile Dynamics</p>
     <h1 id="hero-title">Fund life science from a treasury <span>built to last</span></h1>
@@ -806,6 +821,24 @@ function init(){
   setLang(start);
 }
 init();
+/* Hero video: starts after page load, plays only while on screen; reduced-motion visitors keep the poster. */
+const heroVideo = $('#heroVideo');
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.remove();
+} else {
+  heroVideo.addEventListener('playing', () => heroVideo.classList.add('is-playing'), {once: true});
+  // Autoplay can be refused (iOS Low Power Mode, data saver); the poster then stays as the background.
+  const playHero = () => heroVideo.play().catch(() => heroVideo.remove());
+  const startHero = () => {
+    heroVideo.preload = 'auto';
+    new IntersectionObserver(([entry]) => {
+      if (!heroVideo.isConnected) return;
+      if (entry.isIntersecting) playHero(); else heroVideo.pause();
+    }).observe(heroVideo);
+  };
+  if (document.readyState === 'complete') startHero(); else window.addEventListener('load', startHero, {once: true});
+}
+
 /* Phone menu */
 const topBar = $('header.top'), menuBtn = $('#menuBtn');
 const setMenu = open => { topBar.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open)); };
