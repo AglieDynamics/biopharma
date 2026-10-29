@@ -243,10 +243,6 @@ section.band{padding-block:72px}
 .contact .done{background:var(--surface-2);border-radius:8px;padding:12px;font-size:14px}
 @media (max-width:860px){.contact{grid-template-columns:1fr}.contact .row{grid-template-columns:1fr}}
 
-/* Draft notice (remove with the #draft-notice element after legal sign-off) */
-.draft-strip{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding-block:8px}
-.draft-strip span{display:inline-block;background:#FFD166;color:#2B1D00;font:600 12px/1.4 var(--display);padding:3px 10px;border-radius:999px}
-
 footer{background:var(--navy);color:var(--navy-muted);font-size:13px}
 footer .wrap{padding-block:36px;display:grid;gap:18px}
 footer .fl{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
@@ -284,9 +280,6 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
 }</style>
 </head>
 <body>
-
-<!-- Remove this element once legal review has approved the page for publication. -->
-<div class="draft-strip" id="draft-notice" role="note"><div class="wrap"><span>Draft for legal review · Not approved for distribution</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -566,7 +559,6 @@ const ES = {
   'Full name':'Nombre completo','Organisation':'Organización','Work email':'Correo profesional','I am':'Soy',
   'An investor':'Inversor','A scientific partner':'Socio científico','A growth company':'Empresa en crecimiento','A service provider':'Proveedor de servicios',
   'Opportunity of interest':'Oportunidad de interés','General enquiry':'Consulta general','Message':'Mensaje','Send enquiry':'Enviar consulta',
-  'Draft for legal review · Not approved for distribution':'Borrador para revisión legal · No aprobado para su distribución',
   'Sponsored by Agile Dynamics · Bringing People, Organization and Technology Together':'Patrocinado por Agile Dynamics · Bringing People, Organization and Technology Together',
   'This website is for information only and is not an offer or solicitation to buy or sell any security. Any offer will be made only through offering documents to qualified investors. Figures are planned, modelled or assumed and may not be achieved. Distributions may consist largely of return of capital. Cryptoassets are highly volatile and may lose all value. Sample portfolio companies are illustrative. Agile Dynamics is the sponsor of AgileBio Tech and has an economic interest.':
     'Este sitio web tiene fines exclusivamente informativos y no constituye una oferta ni una solicitud de compra o venta de ningún valor. Cualquier oferta se realizará únicamente mediante documentos de oferta dirigidos a inversores cualificados. Las cifras son planificadas, modelizadas o supuestas y pueden no alcanzarse. Las distribuciones pueden consistir en gran parte en devolución de capital. Los criptoactivos son muy volátiles y pueden perder todo su valor. Las empresas de la cartera de muestra son ilustrativas. Agile Dynamics es el patrocinador de AgileBio Tech y tiene un interés económico.',
