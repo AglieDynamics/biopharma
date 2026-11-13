@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AgileBio Tech">
 <meta property="og:title" content="AgileBio Tech: fund life science from a treasury built to last">
-<meta property="og:description" content="AgileBio Tech pairs a regulated Bitcoin treasury, structured in Hong Kong, with hands-on venture building. Science is funded through milestone-gated tranches, never through a fixed dividend.">
+<meta property="og:description" content="AgileBio Tech pairs a rules-based Bitcoin and Treasury-bill certificate, issued in two series, with hands-on venture building. Half of every distribution above the floor buys science-pool units the holders own, with no fixed dividend.">
 <meta property="og:url" content="https://biopharma-ecru.vercel.app/">
 <meta property="og:image" content="https://biopharma-ecru.vercel.app/img/og-agilebiotech.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -62,18 +62,21 @@ p{margin:0}
 
 /* Masthead */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08)}
-.top .wrap{display:flex;align-items:center;gap:24px;padding-block:14px}
+.top .wrap{display:flex;align-items:center;gap:20px;padding-block:14px}
 .logo img{height:30px;width:auto;display:block}
-nav.main{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+nav.main{display:flex;gap:clamp(14px,1.5vw,22px);margin-left:auto;flex-wrap:nowrap;white-space:nowrap}
+.logo{flex:none}.top .btn,.lang{flex:none;white-space:nowrap}
 nav.main a{color:var(--navy-ink);text-decoration:none;font:500 14px var(--display);opacity:.85}
 nav.main a:hover{opacity:1;color:var(--sky)}
 .top .btn{padding:10px 16px}
 .lang{display:flex;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px}
 .lang button{background:transparent;border:0;color:var(--navy-ink);font:600 12px var(--display);letter-spacing:.06em;padding:6px 10px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--navy-ink);color:var(--navy)}
+@media (max-width:1240px){nav.main a{font-size:13px}.top .wrap{gap:16px}}
+@media (max-width:1180px) and (min-width:1001px){.top .btn{display:none}}
 .menu-btn{display:none}
 /* Phones and small tablets: logo plus a menu button; links, language and contact open in a panel. */
-@media (max-width:900px){
+@media (max-width:1000px){
   .top .wrap{flex-wrap:wrap;column-gap:12px;row-gap:0}
   .menu-btn{order:1;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:transparent;color:var(--navy-ink);cursor:pointer}
   .menu-btn svg{width:20px;height:20px}
@@ -238,11 +241,31 @@ section.band{padding-block:72px}
 .contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
 .contact form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:grid;gap:14px}
 .contact label{display:grid;gap:6px;font:600 13px var(--display)}
-.contact input,.contact select,.contact textarea{width:100%;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font:15px var(--body)}
+.contact input,.contact select,.contact textarea{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font:15px var(--body)}
 .contact .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .contact .done{background:var(--surface-2);border-radius:8px;padding:12px;font-size:14px}
 @media (max-width:860px){.contact{grid-template-columns:1fr}.contact .row{grid-template-columns:1fr}}
 
+.hero .wrap>*,.contact>*,.contact form>*,.contact .row>*{min-width:0}
+.contact input,.contact select,.contact textarea{width:100%;min-width:0}
+.search input{width:100%}
+/* OpportunityIQ band */
+.oiq{position:relative;isolation:isolate;min-height:560px;background:var(--navy);color:var(--navy-ink);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1.15fr 1fr;align-items:stretch}
+.oiq .txt{position:relative;z-index:1;padding:44px;display:grid;gap:16px;align-content:center;min-width:0}
+.oiq .oiq-logo{width:min(300px,80%);height:auto;display:block}
+.oiq .eyebrow{color:var(--sky)}
+.oiq h2{font-size:clamp(24px,2.6vw,34px);color:#fff}
+.oiq p{color:var(--navy-muted)}
+.oiq ul{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:10px}
+.oiq li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:15px;color:var(--navy-ink)}
+.oiq li b{font-family:var(--display);color:#fff}
+.oiq li i{width:34px;height:34px;border-radius:50%;background:rgba(42,180,242,.15);color:var(--sky);display:grid;place-items:center;font:600 13px var(--mono);font-style:normal}
+.oiq .acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+.oiq .acts small{font-size:12.5px;color:var(--navy-muted)}
+.oiq .pic{position:absolute;inset:0;z-index:0}
+.oiq .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.oiq .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,26,51,.97) 0%,rgba(7,26,51,.9) 38%,rgba(7,26,51,.45) 58%,rgba(7,26,51,.05) 80%)}
+@media (max-width:860px){.oiq{grid-template-columns:1fr}.oiq{min-height:0}.oiq .pic{position:relative;inset:auto;min-height:230px;order:-1}.oiq .pic img{object-position:68% 40%}.oiq .pic::after{background:linear-gradient(0deg,var(--navy) 0%,rgba(7,26,51,0) 60%)}.oiq .txt{padding:28px 20px}}
 footer{background:var(--navy);color:var(--navy-muted);font-size:13px}
 footer .wrap{padding-block:36px;display:grid;gap:18px}
 footer .fl{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
@@ -287,7 +310,8 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
     <nav class="main" id="mainNav" aria-label="Main">
       <a href="#opportunities">Opportunities</a>
       <a href="#model">How it works</a>
-      <a href="#hongkong">Hong Kong</a>
+      <a href="#opportunityiq">OpportunityIQ</a>
+      <a href="#hongkong">Structure</a>
       <a href="#governance">Governance</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
@@ -313,7 +337,7 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
   <div class="wrap">
     <p class="eyebrow">Life-science investment platform · sponsored by Agile Dynamics</p>
     <h1 id="hero-title">Fund life science from a treasury <span>built to last</span></h1>
-    <p class="lede">AgileBio Tech pairs a regulated Bitcoin treasury, structured in Hong Kong, with hands-on venture building. Science is funded through milestone-gated tranches, never through a fixed dividend.</p>
+    <p class="lede">AgileBio Tech pairs a rules-based Bitcoin and Treasury-bill certificate, issued in two series, with hands-on venture building. Half of every distribution above the floor buys science-pool units the holders own, with no fixed dividend.</p>
     <form class="search" role="search" id="heroSearch">
       <input id="q-hero" type="search" aria-label="Search opportunities" placeholder="Search opportunities, e.g. respiratory, Phase I, fund">
       <button class="btn btn-primary" type="submit">Search</button>
@@ -327,10 +351,10 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
   </div>
   <div class="stats">
     <div class="wrap">
-      <div class="stat"><div class="v">US$50M</div><div class="l">Minimum first close of the treasury fund</div></div>
-      <div class="stat"><div class="v">3% · 10%</div><div class="l">Distribution floor and cap, no fixed dividend</div></div>
-      <div class="stat"><div class="v">5:1</div><div class="l">Target co-investor leverage on every deal</div></div>
-      <div class="stat"><div class="v">Q1 2027</div><div class="l">Earliest first close, after three gates</div></div>
+      <div class="stat"><div class="v">US$50M</div><div class="l">First close across the Growth and Core series</div></div>
+      <div class="stat"><div class="v">0.75–2.5%</div><div class="l">Quarterly distribution floor and cap, no fixed dividend</div></div>
+      <div class="stat"><div class="v">5:1</div><div class="l">Third-party dollars beside every science-pool dollar</div></div>
+      <div class="stat"><div class="v">Q2 2027</div><div class="l">Target first close, 30 June 2027, after three gates</div></div>
     </div>
   </div>
 </section>
@@ -370,15 +394,35 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
       <p class="sub">One vehicle, two pools with different jobs, and a venture builder that does the hands-on work.</p>
     </div>
     <div class="steps">
-      <div class="step"><span class="k">Step 1</span><h3>Capital in</h3><p>Qualified investors commit once to a regulated Hong Kong fund vehicle.</p></div>
-      <div class="step"><span class="k">Step 2</span><h3>Treasury engine</h3><p>Bitcoin plus a T-bill reserve of 42.9% at launch, with no Bitcoin sold in a down quarter.</p></div>
-      <div class="step"><span class="k">Step 3</span><h3>Spending rule</h3><p>The science budget follows smoothed treasury value, starting near US$1.5M a year at the 3% floor.</p></div>
-      <div class="step"><span class="k">Step 4</span><h3>Milestone gate</h3><p>An independent scientific board verifies each milestone before the next tranche is released.</p></div>
+      <div class="step"><span class="k">Step 1</span><h3>Subscribe</h3><p>Professional investors buy Growth or Core certificate units through licensed distributors.</p></div>
+      <div class="step"><span class="k">Step 2</span><h3>Apply the rule</h3><p>Growth holds 57.1% Bitcoin, Core 20%, the rest in T-bills. Rebalance in up quarters; never sell Bitcoin in a down quarter.</p></div>
+      <div class="step"><span class="k">Step 3</span><h3>Distribute and route</h3><p>Pay 0.75–2.5% of NAV each quarter. Half of anything above the floor buys science units the holders own.</p></div>
+      <div class="step"><span class="k">Step 4</span><h3>Fund science</h3><p>The Investment Committee approves tranches of US$0.5–2.5M at 5:1; the Scientific Advisory Board verifies milestones.</p></div>
     </div>
     <div class="flowback">
-      <div><b>Value flows back</b><p>Licence upfronts, milestone income and capped revenue shares from companies that already sell.</p></div>
-      <div><b>Investors share the cycle</b><p>A managed distribution moves with the treasury, so losses are not passed to the science.</p></div>
+      <div><b>Value flows back</b><p>Revenue shares capped at 2.0× from companies that already sell. Returns go to unit holders, never into the treasury.</p></div>
+      <div><b>Investors share the cycle</b><p>The link routes only upside above the floor, never capital, and holders can opt out to cash.</p></div>
       <div><b>Venture builder</b><p>Agile Dynamics runs regulatory, business development, launch and finance services for every portfolio company.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="opportunityiq" aria-labelledby="oiq-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="oiq">
+      <div class="txt">
+        <img class="oiq-logo" src="/img/oiq-logo-white.png" alt="OpportunityIQ · From molecule to market decision">
+        <p class="eyebrow">Deal intelligence for the science pool</p>
+        <h2 id="oiq-title">Which asset, which country, which deal, and what it’s really worth</h2>
+        <p>OpportunityIQ is the AI business-intelligence platform Agile Dynamics is building for the AgileBio Tech ecosystem. It turns evidence from health authorities, regulators, trial registries, patent offices and licensed market data into a ranked pipeline of opportunities, each with the same auditable business case.</p>
+        <ul>
+          <li><i>01</i><span><b>Sizes the demand.</b> Patient-flow funnels from total to obtainable market, year by year.</span></li>
+          <li><i>02</i><span><b>Values each deal.</b> Owner receipts, rNPV, IRR and peak funding for every route to market.</span></li>
+          <li><i>03</i><span><b>Gates every call.</b> Expert sign-off before an opportunity reaches the Investment Committee.</span></li>
+        </ul>
+        <div class="acts"><a class="btn btn-primary" href="https://claude.ai/artifact/LnFbUs9WcrR5bHq4nSfhmz" target="_blank" rel="noopener">Explore OpportunityIQ ↗</a><small>Platform in development</small></div>
+      </div>
+      <div class="pic"><img src="/img/oiq-bg.jpg" alt="A gloved scientist adds a drop to a test tube, surrounded by AI and molecule icons" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -387,19 +431,19 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
   <div class="wrap hk">
     <div class="hk-top">
       <div class="hk-intro">
-        <p class="eyebrow">Jurisdiction · Hong Kong</p>
-        <h2 id="hk-title">Why we are building in Hong Kong</h2>
-        <p>Hong Kong combines a simple tax system, ready-made fund structures, a licensed regime for digital assets and Asia’s deepest market for biotech listings.</p>
-        <p class="hk-note">Summary only; the final structure is subject to Hong Kong tax and legal advice.</p>
+        <p class="eyebrow">Structure and jurisdictions</p>
+        <h2 id="hk-title">Swiss certificate. Guernsey issuer. Hong Kong sponsor.</h2>
+        <p>Each job sits in the jurisdiction built for it: a Swiss-law certificate, an independent Guernsey issuer, and a Hong Kong sponsor seat that reaches professional investors through licensed intermediaries.</p>
+        <p class="hk-note">Summary only; terms are indicative and subject to counsel’s opinions in three jurisdictions.</p>
       </div>
       <img src="/img/hk-towers.jpg" alt="Glass office towers above Victoria Harbour, Hong Kong">
     </div>
     <div class="hk-grid">
-      <div><b>Low, simple tax</b><p>Profits tax of 8.25% on the first HK$2 million and 16.5% above it. No capital gains tax and no withholding tax on dividends.</p></div>
-      <div><b>Fund structures</b><p>Open-ended fund companies and limited partnership funds, with a unified fund tax exemption. A 2026 bill would add digital assets; it is not yet law.</p></div>
-      <div><b>Digital-asset rules</b><p>The Securities and Futures Commission licenses managers and platforms, a regulated route to Bitcoin exposure.</p></div>
-      <div><b>Biotech capital</b><p>84 biotech companies listed under HKEX Chapter 18A by January 2026, raising more than US$17.5 billion since 2018.</p></div>
-      <div><b>Gateway to Asia</b><p>Close to Mainland China and Asian licensees, and home of the AXION Technology Foundation, co-founded by Agile Dynamics.</p></div>
+      <div><b>Switzerland</b><p>Swiss-law actively managed certificate with a CH ISIN; FINMA-supervised manager and custodian; settled through SIX SIS.</p></div>
+      <div><b>Guernsey</b><p>Incorporated cells with GFSC consent, an independent board majority and orphan ownership.</p></div>
+      <div><b>Hong Kong</b><p>Sponsor seat; professional investors reached only through licensed intermediaries.</p></div>
+      <div><b>Screening</b><p>Five sanctions lists checked at every step, with a ring-fence on both pools.</p></div>
+      <div><b>Outside mainland China</b><p>No offer, marketing, accounts or custody on the mainland, in line with PBOC Notice No. 42.</p></div>
     </div>
   </div>
 </section>
@@ -408,13 +452,13 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
   <div class="wrap">
     <div class="section-head">
       <div><p class="eyebrow">Governance</p><h2 id="gov-title">The people who pick deals do not hold or value the money</h2></div>
-      <p class="sub">A board with an independent majority, three committees and independent providers keep governance, investment and operations apart.</p>
+      <p class="sub">The sponsor sponsors; it does not control. It gives no advice, places no orders and holds no assets.</p>
     </div>
     <div class="gov">
-      <div><b>Board of Directors</b><p>Independent majority; owns strategy and risk.</p></div>
-      <div><b>Investment Committee</b><p>Approves every tranche. The sponsor cannot approve its own deals.</p></div>
-      <div><b>Scientific Advisory Board</b><p>Verifies each milestone and has no vote on capital.</p></div>
-      <div><b>Custodian and manager</b><p>An independent custodian holds the assets; an SFC-licensed manager runs the mandate.</p></div>
+      <div><b>Independent board</b><p>Independent majority and orphan ownership; approves every related-party matter.</p></div>
+      <div><b>Unaffiliated manager</b><p>A FINMA-supervised manager executes the written rule, with no discretion on payouts.</p></div>
+      <div><b>Independent administrator</b><p>Tests every trade against the rule and computes each payout and the science link.</p></div>
+      <div><b>Science committees</b><p>The Investment Committee approves tranches; the Scientific Advisory Board verifies milestones.</p></div>
     </div>
   </div>
 </section>
@@ -422,20 +466,20 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
 <section class="band" id="roadmap" aria-labelledby="road-title">
   <div class="wrap">
     <div class="section-head">
-      <div><p class="eyebrow">Roadmap</p><h2 id="road-title">Four phases from formation to first deals</h2></div>
-      <p class="sub">Nothing is invested in science before the treasury closes at US$50M or more.</p>
+      <div><p class="eyebrow">Roadmap</p><h2 id="road-title">Raise from January to June 2027</h2></div>
+      <p class="sub">If a gate’s conditions are not met, the date moves and the conditions do not.</p>
     </div>
     <div class="road">
-      <div class="phase on"><span class="d">Now – Dec 2026</span><h3>Legal setup</h3><p>Tax and regulatory opinions obtained; Hong Kong fund vehicle and venture builder formed; board and committees in place.</p></div>
-      <div class="phase"><span class="d">Dec 2026 – Q1 2027</span><h3>Capitalization</h3><p>Costs capped at US$0.50M a year; custodian and manager signed; binding commitments of US$50M or more.</p></div>
-      <div class="phase"><span class="d">Q1 – Q3 2027</span><h3>Sourcing and diligence</h3><p>30–50 co-investors, three lead investors, university frameworks and a biotech vehicle of US$4M or more.</p></div>
-      <div class="phase"><span class="d">Q3 2027 – 2028</span><h3>Launch and run</h3><p>First go-to-market deals and R&amp;D tranches, quarterly reports and the first verified milestone.</p></div>
+      <div class="phase on"><span class="d">Now – 15 Jan 2027</span><h3>Legal setup</h3><p>Counsel’s opinions in Switzerland, Guernsey and Hong Kong; Latin American tax advisers briefed.</p></div>
+      <div class="phase"><span class="d">Feb – Mar 2027</span><h3>Providers and soft circle</h3><p>Binding cost quotes, providers, a named CIO and CFO, then a soft circle of US$25M or more with two Latin American targets.</p></div>
+      <div class="phase"><span class="d">Apr – 30 Jun 2027</span><h3>First close</h3><p>US$50M binding across the Growth and Core series; fixed costs capped at US$0.5M a year.</p></div>
+      <div class="phase"><span class="d">After close</span><h3>Science pool</h3><p>First vintage of US$4–5M in Latin America: tranches of US$0.5–2.5M at 5:1, revenue shares capped at 2.0×.</p></div>
     </div>
     <div class="gates" aria-label="Decision gates">
-      <span class="gate"><i></i><b>Gate 1</b> 13 Nov 2026 · indicative interest</span>
-      <span class="gate"><i></i><b>Gate 1b</b> 11 Dec 2026 · costs fixed</span>
-      <span class="gate"><i></i><b>Gate 2</b> 13 Jan 2027 · go or no-go</span>
-      <span class="gate"><i></i><b>First close</b> Q1 2027 at the earliest</span>
+      <span class="gate"><i></i><b>Gate 0</b> 15 Jan 2027 · counsel and tax advisers</span>
+      <span class="gate"><i></i><b>Gate 1</b> 26 Feb 2027 · quotes, providers, CIO and CFO</span>
+      <span class="gate"><i></i><b>Gate 2</b> 31 Mar 2027 · US$25M+ soft circle</span>
+      <span class="gate"><i></i><b>First close</b> 30 Jun 2027 · US$50M binding</span>
     </div>
   </div>
 </section>
@@ -469,7 +513,7 @@ dialog::backdrop{background:rgba(4,11,22,.6)}
 <footer>
   <div class="wrap">
     <div class="fl"><img src="/img/logo-white.png" alt="AgileBio Tech"><span>Sponsored by Agile Dynamics · Bringing People, Organization and Technology Together</span></div>
-    <p>This website is for information only and is not an offer or solicitation to buy or sell any security. Any offer will be made only through offering documents to qualified investors. Figures are planned, modelled or assumed and may not be achieved. Distributions may consist largely of return of capital. Cryptoassets are highly volatile and may lose all value. Sample portfolio companies are illustrative. Agile Dynamics is the sponsor of AgileBio Tech and has an economic interest.</p>
+    <p>This website is for information only and is not an offer or solicitation to buy or sell any security. Any offer will be made only through offering documents to professional and institutional investors outside mainland China and the United States; not for distribution in mainland China. Figures are planned, modelled or assumed and may not be achieved. Distributions may consist largely of return of capital. Cryptoassets are highly volatile and may lose all value. Sample portfolio companies are illustrative. Agile Dynamics is the sponsor of AgileBio Tech and has an economic interest.</p>
     <p>© 2026 AgileBio Tech</p>
   </div>
 </footer>
@@ -489,10 +533,10 @@ const ICONS = {
 
 /* Static page text: English source → Spanish. Text nodes and a few attributes are swapped by exact match. */
 const ES = {
-  'Opportunities':'Oportunidades','How it works':'Cómo funciona','Governance':'Gobernanza','Roadmap':'Hoja de ruta','Talk to us':'Hable con nosotros',
+  'Opportunities':'Oportunidades','How it works':'Cómo funciona','Governance':'Gobernanza','Roadmap':'Hoja de ruta','Talk to us':'Contacto',
   'Life-science investment platform · sponsored by Agile Dynamics':'Plataforma de inversión en ciencias de la vida · patrocinada por Agile Dynamics',
   'Fund life science from a treasury':'Financie las ciencias de la vida desde una tesorería','built to last':'diseñada para durar',
-  'AgileBio Tech pairs a regulated Bitcoin treasury, structured in Hong Kong, with hands-on venture building. Science is funded through milestone-gated tranches, never through a fixed dividend.':
+  'AgileBio Tech pairs a rules-based Bitcoin and Treasury-bill certificate, issued in two series, with hands-on venture building. Half of every distribution above the floor buys science-pool units the holders own, with no fixed dividend.':
     'AgileBio Tech combina una tesorería regulada en Bitcoin, estructurada en Hong Kong, con la creación práctica de empresas. La ciencia se financia mediante tramos sujetos a hitos, nunca mediante un dividendo fijo.',
   'Search':'Buscar','Respiratory':'Respiratorio','Neuropsychiatry':'Neuropsiquiatría','Go-to-market':'Salida al mercado','Treasury fund':'Fondo de tesorería',
   'Minimum first close of the treasury fund':'Primer cierre mínimo del fondo de tesorería',
@@ -534,7 +578,7 @@ const ES = {
   'Gateway to Asia':'Puerta de entrada a Asia','Close to Mainland China and Asian licensees, and home of the AXION Technology Foundation, co-founded by Agile Dynamics.':
     'Cerca de China continental y de licenciatarios asiáticos, y sede de la AXION Technology Foundation, cofundada por Agile Dynamics.',
   'The people who pick deals do not hold or value the money':'Quienes eligen las operaciones no custodian ni valoran el dinero',
-  'A board with an independent majority, three committees and independent providers keep governance, investment and operations apart.':
+  'The sponsor sponsors; it does not control. It gives no advice, places no orders and holds no assets.':
     'Un consejo con mayoría independiente, tres comités y proveedores independientes mantienen separados la gobernanza, la inversión y las operaciones.',
   'Board of Directors':'Consejo de Administración','Independent majority; owns strategy and risk.':'Mayoría independiente; responsable de la estrategia y el riesgo.',
   'Investment Committee':'Comité de Inversiones','Approves every tranche. The sponsor cannot approve its own deals.':'Aprueba cada tramo. El patrocinador no puede aprobar sus propias operaciones.',
@@ -560,18 +604,87 @@ const ES = {
   'An investor':'Inversor','A scientific partner':'Socio científico','A growth company':'Empresa en crecimiento','A service provider':'Proveedor de servicios',
   'Opportunity of interest':'Oportunidad de interés','General enquiry':'Consulta general','Message':'Mensaje','Send enquiry':'Enviar consulta',
   'Sponsored by Agile Dynamics · Bringing People, Organization and Technology Together':'Patrocinado por Agile Dynamics · Bringing People, Organization and Technology Together',
-  'This website is for information only and is not an offer or solicitation to buy or sell any security. Any offer will be made only through offering documents to qualified investors. Figures are planned, modelled or assumed and may not be achieved. Distributions may consist largely of return of capital. Cryptoassets are highly volatile and may lose all value. Sample portfolio companies are illustrative. Agile Dynamics is the sponsor of AgileBio Tech and has an economic interest.':
-    'Este sitio web tiene fines exclusivamente informativos y no constituye una oferta ni una solicitud de compra o venta de ningún valor. Cualquier oferta se realizará únicamente mediante documentos de oferta dirigidos a inversores cualificados. Las cifras son planificadas, modelizadas o supuestas y pueden no alcanzarse. Las distribuciones pueden consistir en gran parte en devolución de capital. Los criptoactivos son muy volátiles y pueden perder todo su valor. Las empresas de la cartera de muestra son ilustrativas. Agile Dynamics es el patrocinador de AgileBio Tech y tiene un interés económico.',
+  'This website is for information only and is not an offer or solicitation to buy or sell any security. Any offer will be made only through offering documents to professional and institutional investors outside mainland China and the United States; not for distribution in mainland China. Figures are planned, modelled or assumed and may not be achieved. Distributions may consist largely of return of capital. Cryptoassets are highly volatile and may lose all value. Sample portfolio companies are illustrative. Agile Dynamics is the sponsor of AgileBio Tech and has an economic interest.':
+    'Este sitio web tiene fines exclusivamente informativos y no constituye una oferta ni una solicitud de compra o venta de ningún valor. Cualquier oferta se realizará únicamente mediante documentos de oferta dirigidos a inversores profesionales e institucionales fuera de China continental y de Estados Unidos; no se distribuye en China continental. Las cifras son planificadas, modelizadas o supuestas y pueden no alcanzarse. Las distribuciones pueden consistir en gran parte en devolución de capital. Los criptoactivos son muy volátiles y pueden perder todo su valor. Las empresas de la cartera de muestra son ilustrativas. Agile Dynamics es el patrocinador de AgileBio Tech y tiene un interés económico.',
   /* attributes */
-  'Menu':'Menú',
   'Search opportunities, e.g. respiratory, Phase I, fund':'Buscar oportunidades, p. ej. respiratorio, Fase I, fondo',
   'Search opportunities':'Buscar oportunidades','Popular searches':'Búsquedas frecuentes','Filter opportunities':'Filtrar oportunidades',
   'Therapeutic area':'Área terapéutica','Stage':'Etapa','Main':'Principal','Decision gates':'Controles de decisión','Back to top':'Volver arriba',
   'AgileBio Tech home':'Inicio de AgileBio Tech','Language':'Idioma',
   'Glass office towers above Victoria Harbour, Hong Kong':'Torres de oficinas de cristal sobre el puerto Victoria, Hong Kong',
-  'Two researchers discussing a DNA visualization':'Dos investigadoras conversando ante una visualización de ADN'
+  'Two researchers discussing a DNA visualization':'Dos investigadoras conversando ante una visualización de ADN',
+  'AgileBio Tech pairs a rules-based Bitcoin and Treasury-bill certificate, issued in two series, with hands-on venture building. Half of every distribution above the floor buys science-pool units the holders own, with no fixed dividend.':'AgileBio Tech combina un certificado de Bitcoin y letras del Tesoro basado en reglas, emitido en dos series, con la creación práctica de empresas. La mitad de cada distribución por encima del mínimo compra participaciones del fondo científico que pertenecen a los titulares, sin dividendo fijo.',
+  'First close across the Growth and Core series':'Primer cierre entre las series Growth y Core',
+  'Quarterly distribution floor and cap, no fixed dividend':'Mínimo y máximo de distribución trimestral, sin dividendo fijo',
+  'Third-party dollars beside every science-pool dollar':'Dólares de terceros junto a cada dólar del fondo científico',
+  'Q2 2027':'T2 2027',
+  'Target first close, 30 June 2027, after three gates':'Primer cierre objetivo, 30 de junio de 2027, tras tres controles',
+  'Subscribe':'Suscribir',
+  'Professional investors buy Growth or Core certificate units through licensed distributors.':'Los inversores profesionales compran participaciones Growth o Core a través de distribuidores con licencia.',
+  'Apply the rule':'Aplicar la regla',
+  'Growth holds 57.1% Bitcoin, Core 20%, the rest in T-bills. Rebalance in up quarters; never sell Bitcoin in a down quarter.':'Growth mantiene un 57,1 % en Bitcoin y Core un 20 %, el resto en letras del Tesoro. Se reequilibra en trimestres alcistas; nunca se vende Bitcoin en un trimestre bajista.',
+  'Distribute and route':'Distribuir y canalizar',
+  'Pay 0.75–2.5% of NAV each quarter. Half of anything above the floor buys science units the holders own.':'Se paga el 0,75–2,5 % del valor liquidativo cada trimestre. La mitad de lo que supere el mínimo compra participaciones científicas de los titulares.',
+  'Fund science':'Financiar la ciencia',
+  'The Investment Committee approves tranches of US$0.5–2.5M at 5:1; the Scientific Advisory Board verifies milestones.':'El Comité de Inversiones aprueba tramos de 0,5–2,5 M US$ con apalancamiento 5:1; el Comité Científico Asesor verifica los hitos.',
+  'Revenue shares capped at 2.0× from companies that already sell. Returns go to unit holders, never into the treasury.':'Participaciones en ingresos con tope de 2,0× de empresas que ya venden. Los retornos van a los titulares, nunca a la tesorería.',
+  'The link routes only upside above the floor, never capital, and holders can opt out to cash.':'El vínculo canaliza solo la ganancia por encima del mínimo, nunca el capital, y los titulares pueden optar por efectivo.',
+  'Deal intelligence for the science pool':'Inteligencia de operaciones para el fondo científico',
+  'Which asset, which country, which deal, and what it’s really worth':'Qué activo, qué país, qué acuerdo y cuánto vale realmente',
+  'OpportunityIQ is the AI business-intelligence platform Agile Dynamics is building for the AgileBio Tech ecosystem. It turns evidence from health authorities, regulators, trial registries, patent offices and licensed market data into a ranked pipeline of opportunities, each with the same auditable business case.':'OpportunityIQ es la plataforma de inteligencia de negocio con IA que Agile Dynamics está desarrollando para el ecosistema AgileBio Tech. Convierte la evidencia de autoridades sanitarias, reguladores, registros de ensayos, oficinas de patentes y datos de mercado con licencia en una cartera clasificada de oportunidades, cada una con el mismo caso de negocio auditable.',
+  'Sizes the demand.':'Dimensiona la demanda.',
+  'Patient-flow funnels from total to obtainable market, year by year.':'Embudos de pacientes desde el mercado total hasta el alcanzable, año a año.',
+  'Values each deal.':'Valora cada acuerdo.',
+  'Owner receipts, rNPV, IRR and peak funding for every route to market.':'Cobros del titular, VPNr, TIR y financiación máxima para cada vía de acceso al mercado.',
+  'Gates every call.':'Controla cada decisión.',
+  'Expert sign-off before an opportunity reaches the Investment Committee.':'Validación experta antes de que una oportunidad llegue al Comité de Inversiones.',
+  'Explore OpportunityIQ ↗':'Descubra OpportunityIQ ↗',
+  'Platform in development':'Plataforma en desarrollo',
+  'OpportunityIQ · From molecule to market decision':'OpportunityIQ · De la molécula a la decisión de mercado',
+  'A gloved scientist adds a drop to a test tube, surrounded by AI and molecule icons':'Un científico con guantes añade una gota a un tubo de ensayo, rodeado de iconos de IA y moléculas',
+  'Structure':'Estructura',
+  'Structure and jurisdictions':'Estructura y jurisdicciones',
+  'Swiss certificate. Guernsey issuer. Hong Kong sponsor.':'Certificado suizo. Emisor en Guernsey. Patrocinador en Hong Kong.',
+  'Each job sits in the jurisdiction built for it: a Swiss-law certificate, an independent Guernsey issuer, and a Hong Kong sponsor seat that reaches professional investors through licensed intermediaries.':'Cada función está en la jurisdicción pensada para ella: un certificado de derecho suizo, un emisor independiente en Guernsey y una sede del patrocinador en Hong Kong que llega a inversores profesionales a través de intermediarios con licencia.',
+  'Summary only; terms are indicative and subject to counsel’s opinions in three jurisdictions.':'Solo un resumen; los términos son indicativos y están sujetos a dictámenes jurídicos en tres jurisdicciones.',
+  'Switzerland':'Suiza',
+  'Swiss-law actively managed certificate with a CH ISIN; FINMA-supervised manager and custodian; settled through SIX SIS.':'Certificado de gestión activa de derecho suizo con ISIN CH; gestor y custodio supervisados por FINMA; liquidación a través de SIX SIS.',
+  'Incorporated cells with GFSC consent, an independent board majority and orphan ownership.':'Células constituidas con autorización de la GFSC, mayoría independiente en el consejo y propiedad huérfana.',
+  'Sponsor seat; professional investors reached only through licensed intermediaries.':'Sede del patrocinador; se llega a inversores profesionales solo mediante intermediarios con licencia.',
+  'Screening':'Verificación',
+  'Five sanctions lists checked at every step, with a ring-fence on both pools.':'Cinco listas de sanciones verificadas en cada paso, con un perímetro de aislamiento en ambos fondos.',
+  'Outside mainland China':'Fuera de China continental',
+  'No offer, marketing, accounts or custody on the mainland, in line with PBOC Notice No. 42.':'Sin oferta, promoción, cuentas ni custodia en China continental, conforme al Aviso n.º 42 del PBOC.',
+  'Independent board':'Consejo independiente',
+  'Independent majority and orphan ownership; approves every related-party matter.':'Mayoría independiente y propiedad huérfana; aprueba toda operación con partes vinculadas.',
+  'Unaffiliated manager':'Gestor no vinculado',
+  'A FINMA-supervised manager executes the written rule, with no discretion on payouts.':'Un gestor supervisado por FINMA ejecuta la regla escrita, sin discrecionalidad sobre los pagos.',
+  'Independent administrator':'Administrador independiente',
+  'Tests every trade against the rule and computes each payout and the science link.':'Comprueba cada operación frente a la regla y calcula cada pago y el vínculo científico.',
+  'Science committees':'Comités científicos',
+  'The Investment Committee approves tranches; the Scientific Advisory Board verifies milestones.':'El Comité de Inversiones aprueba los tramos; el Comité Científico Asesor verifica los hitos.',
+  'The sponsor sponsors; it does not control. It gives no advice, places no orders and holds no assets.':'El patrocinador patrocina; no controla. No asesora, no da órdenes y no custodia activos.',
+  'Raise from January to June 2027':'Captación de enero a junio de 2027',
+  'If a gate’s conditions are not met, the date moves and the conditions do not.':'Si no se cumplen las condiciones de un control, se mueve la fecha, no las condiciones.',
+  'Now – 15 Jan 2027':'Hoy – 15 ene. 2027',
+  'Counsel’s opinions in Switzerland, Guernsey and Hong Kong; Latin American tax advisers briefed.':'Dictámenes jurídicos en Suiza, Guernsey y Hong Kong; asesores fiscales latinoamericanos informados.',
+  'Feb – Mar 2027':'Feb. – mar. 2027',
+  'Providers and soft circle':'Proveedores y compromisos indicativos',
+  'Binding cost quotes, providers, a named CIO and CFO, then a soft circle of US$25M or more with two Latin American targets.':'Presupuestos vinculantes, proveedores, un CIO y un CFO designados y, después, compromisos indicativos de 25 M US$ o más con dos objetivos en América Latina.',
+  'Apr – 30 Jun 2027':'Abr. – 30 jun. 2027',
+  'US$50M binding across the Growth and Core series; fixed costs capped at US$0.5M a year.':'50 M US$ vinculantes entre las series Growth y Core; costes fijos limitados a 0,5 M US$ al año.',
+  'After close':'Tras el cierre',
+  'Science pool':'Fondo científico',
+  'First vintage of US$4–5M in Latin America: tranches of US$0.5–2.5M at 5:1, revenue shares capped at 2.0×.':'Primera cosecha de 4–5 M US$ en América Latina: tramos de 0,5–2,5 M US$ con apalancamiento 5:1 y participaciones en ingresos con tope de 2,0×.',
+  'Menu':'Menú',
+  'Gate 0':'Control 0',
+  '15 Jan 2027 · counsel and tax advisers':'15 ene. 2027 · asesores jurídicos y fiscales',
+  '26 Feb 2027 · quotes, providers, CIO and CFO':'26 feb. 2027 · presupuestos, proveedores, CIO y CFO',
+  '31 Mar 2027 · US$25M+ soft circle':'31 mar. 2027 · compromisos indicativos de 25 M US$ o más',
+  '30 Jun 2027 · US$50M binding':'30 jun. 2027 · 50 M US$ vinculantes'
 };
 
+/* Dynamic UI strings */
 const ENQUIRY_EMAIL = 'paul.lalovich@agiledynamics.co';
 
 /* Dynamic UI strings */
@@ -586,7 +699,7 @@ const UI = {
       sent:n=>`Gracias, ${n}. Su aplicación de correo debería abrirse con la consulta lista para enviar. Si no se abre, escriba a ${ENQUIRY_EMAIL}.`}
 };
 const TYPES = [
-  {id:'Treasury fund', es:'Fondo de tesorería', img:'/img/tile-fund.jpg', blurb:'Qualified investors commit to the regulated Hong Kong treasury fund that powers the platform.', blurbEs:'Los inversores cualificados se comprometen con el fondo de tesorería regulado en Hong Kong que impulsa la plataforma.'},
+  {id:'Treasury fund', es:'Fondo de tesorería', img:'/img/tile-fund.jpg', blurb:'Professional investors buy Growth or Core units of the rules-based certificate that powers the platform.', blurbEs:'Los inversores profesionales compran participaciones Growth o Core del certificado basado en reglas que impulsa la plataforma.'},
   {id:'Go-to-market', es:'Salida al mercado', img:'/img/tile-gtm-b.jpg', blurb:'Fund approved products entering new markets, repaid from audited sales.', blurbEs:'Financie productos aprobados que entran en nuevos mercados, reembolsados con ventas auditadas.'},
   {id:'R&D', es:'I+D', img:'/img/tile-rd.jpg', blurb:'Milestone tranches beside a specialist lead, from preclinical to Phase I.', blurbEs:'Tramos por hitos junto a un inversor principal especializado, de la fase preclínica a la Fase I.'},
   {id:'Scale-up', es:'Escalado industrial', img:'/img/tile-scaleup.jpg', blurb:'Expand proven, approved production to supply regional and global markets.', blurbEs:'Amplíe producción aprobada y probada para abastecer mercados regionales y globales.'},
@@ -598,16 +711,16 @@ const STAGE_ES = {'Late clinical':'Clínica avanzada','Pre-launch':'Prelanzamien
 
 const OPPS = [
   {id:'fund', img:'/img/microscope.jpg', type:'Treasury fund', area:'Digital-asset treasury', stage:'Pre-launch', risk:null, pdf:'/pdf/agilebio-treasury-fund-factsheet.pdf',
-   en:{title:'AgileBio Tech Treasury Fund I', status:'Gate 1 · 13 Nov 2026', loc:'Hong Kong', alt:'Microscope over a sample with Bitcoin charts behind it',
-     sum:'A regulated Hong Kong Bitcoin treasury with a T-bill reserve and a managed distribution.',
-     kv:[['Minimum close','US$50M'],['Distribution','3% floor, 10% cap'],['First close','Q1 2027 earliest'],['Investors','Qualified only']],
-     high:['Launch NAV of US$49M: US$21.0M in T-bills (42.9%) and US$28.0M in Bitcoin (57.1%)','Managed distribution with a 3% floor (US$1.47M a year) and a 10% cap; no fixed dividend','Costs of 183 bps with founder fee breaks; fixed costs at or below US$0.50M a year','Hong Kong fund vehicle (open-ended fund company or limited partnership fund) with an SFC-licensed manager and an independent custodian, subject to advice'],
-     why:['No warrants, convertibles or preferred claims ahead of investors','Quarterly reporting of capital returned, reserve cover and a comparison with a do-it-yourself investor','First close only once tax and regulatory clearances are in place']},
-   es:{title:'AgileBio Tech Treasury Fund I', status:'Control 1 · 13 nov. 2026', loc:'Hong Kong', alt:'Microscopio sobre una muestra con gráficos de Bitcoin al fondo',
-     sum:'Una tesorería en Bitcoin regulada en Hong Kong, con reserva en letras del Tesoro y una distribución gestionada.',
-     kv:[['Cierre mínimo','50 M US$'],['Distribución','Mínimo 3 %, máximo 10 %'],['Primer cierre','T1 2027 como pronto'],['Inversores','Solo cualificados']],
-     high:['Valor liquidativo inicial de 49 M US$: 21,0 M US$ en letras del Tesoro (42,9 %) y 28,0 M US$ en Bitcoin (57,1 %)','Distribución gestionada con un mínimo del 3 % (1,47 M US$ al año) y un máximo del 10 %; sin dividendo fijo','Costes de 183 pb con descuentos para fundadores; costes fijos de 0,50 M US$ al año como máximo','Vehículo de inversión en Hong Kong (sociedad de capital variable o fondo en sociedad comanditaria) con gestor con licencia de la SFC y custodio independiente, sujeto a asesoramiento'],
-     why:['Sin warrants, convertibles ni acciones preferentes por delante de los inversores','Informes trimestrales del capital devuelto, la cobertura de reservas y una comparación con un inversor que actúe por su cuenta','Primer cierre solo cuando existan las autorizaciones fiscales y regulatorias']}},
+   en:{title:'AgileBio Tech Certificates: Growth and Core', status:'Gate 0 · 15 Jan 2027', loc:'Switzerland · Guernsey · Hong Kong', alt:'Microscope over a sample with Bitcoin charts behind it',
+     sum:'A perpetual, rules-based Bitcoin and T-bill certificate in two series, linked by formula to the science pool.',
+     kv:[['First close','US$50M'],['Distribution','0.75–2.5% a quarter'],['Target close','30 Jun 2027'],['Investors','Professional only']],
+     high:['Growth series: 57.1% Bitcoin and 42.9% T-bills, 140 bps year-one cost at US$25M (82 bps at US$150M)','Core series: 20% Bitcoin and 80% T-bills, 108 bps year-one cost at US$25M, built to a 25% loss rule','Quarterly distribution of 0.75–2.5% of NAV, about 3–10% a year; half of anything above the floor buys science-pool units','Fees of 0.875% on Bitcoin, 0.20% on bills and 0.20% custody; no performance fee; fixed costs about US$343k a year, capped at US$0.5M','Swiss-law AMC issued by Guernsey cells, with a FINMA-supervised manager and custodian and an independent administrator'],
+     why:['Never sells Bitcoin in a down quarter and never borrows against it; no depletion in any modelled scenario','Modelled five-year median multiple of 1.39× for Growth and 1.27× for Core (bootstrap of Jun 2016–Oct 2026 data; not a forecast)','First close only after Gates 0–2: counsel’s opinions, binding quotes and a US$25M+ soft circle']},
+   es:{title:'Certificados AgileBio Tech: Growth y Core', status:'Control 0 · 15 ene. 2027', loc:'Suiza · Guernsey · Hong Kong', alt:'Microscopio sobre una muestra con gráficos de Bitcoin al fondo',
+     sum:'Un certificado perpetuo de Bitcoin y letras del Tesoro basado en reglas, en dos series, vinculado por fórmula al fondo científico.',
+     kv:[['Primer cierre','50 M US$'],['Distribución','0,75–2,5 % trimestral'],['Cierre objetivo','30 jun. 2027'],['Inversores','Solo profesionales']],
+     high:['Serie Growth: 57,1 % en Bitcoin y 42,9 % en letras del Tesoro, coste del primer año de 140 pb con 25 M US$ (82 pb con 150 M US$)','Serie Core: 20 % en Bitcoin y 80 % en letras del Tesoro, coste del primer año de 108 pb con 25 M US$, diseñada con una regla de pérdida máxima del 25 %','Distribución trimestral del 0,75–2,5 % del valor liquidativo, en torno al 3–10 % anual; la mitad de lo que supere el mínimo compra participaciones del fondo científico','Comisiones del 0,875 % sobre Bitcoin, 0,20 % sobre letras y 0,20 % de custodia; sin comisión de éxito; costes fijos de unos 343.000 US$ al año, con un máximo de 0,5 M US$','AMC de derecho suizo emitido por células de Guernsey, con gestor y custodio supervisados por FINMA y un administrador independiente'],
+     why:['Nunca vende Bitcoin en un trimestre bajista ni se endeuda con él; sin agotamiento en ningún escenario modelizado','Múltiplo mediano modelizado a cinco años de 1,39× en Growth y 1,27× en Core (remuestreo de datos de jun. 2016–oct. 2026; no es una previsión)','Primer cierre solo tras los controles 0–2: dictámenes jurídicos, presupuestos vinculantes y compromisos indicativos de 25 M US$ o más']}},
   {id:'a', img:'/img/card-diagnostics.jpg', type:'Go-to-market', area:'Respiratory', stage:'Commercial', risk:'low', pdf:'/pdf/agilebio-company-a-respiratory-diagnostics.pdf',
    en:{title:'Respiratory Diagnostics GCC Market Entry', status:'Illustrative', loc:'GCC, Southeast Asia', alt:'Gloved hands pipetting a blue sample beside rows of test tubes',
      sum:'Launch a diagnostic approved in Europe across the GCC and Southeast Asia, repaid from audited sales.',
